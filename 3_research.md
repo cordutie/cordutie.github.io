@@ -1,20 +1,8 @@
 ---
-layout: default
+layout: inner
 ---
 
-# About me
-
-Hey! I'm Esteban, a Music Technology PhD student at the Music Technology Group (MTG) in Barcelona :)
-
-[see more](./1_me.html)
-
-# Thoughts 
-
-I have some. I swear.
-
-[See more](./2_thoughts.html)
-
-# Publications
+[back](./)
 
 [4] Gutiérrez, E., & Cádiz, R. F. (2024). _Stochastic resonance: Molding sounds from noise._ Proceedings of the 21st Sound and Music Computing Conference, July 4-6, Porto, Portugal. [https://doi.org/10.5281/zenodo.13918961](https://zenodo.org/records/13918961)
 
@@ -22,14 +10,6 @@ I have some. I swear.
 
 [2] Gutiérrez, E., Cádiz, R. & Haworth, C. (2023). Generating Quadratic Difference Tone Spectra for Auditory Distortion Synthesis. International Computer Music Conference 2023: The Sound of Changes, 237-243. Michigan Publishing Services. [https://hdl.handle.net/2027/fulcrum.tx31qm85s](https://hdl.handle.net/2027/fulcrum.tx31qm85s)
 
-[See more.](./3_research.html)
+[1] De Nittis, G., Gutiérrez, E. _Quantization of Edge Currents Along Magnetic Interfaces: A K-Theory Approach._ Acta Applicandae Mathematicae 175, 6 (2021). [https://doi.org/10.1007/s10440-021-00428-z](https://doi.org/10.1007/s10440-021-00428-z)
 
-# Music
-
-[See more](./4_music.html)
-
-<!-- # Tutorial
-
-Syntax and stuff to continue.
-
-[see more](./tutorial_stuff.html). -->
+[back](./)
