@@ -28,8 +28,8 @@ I have some. I swear.
 
 [See more](./4_music.html)
 
-<!-- # Tutorial
+# Tutorial
 
 Syntax and stuff to continue.
 
-[see more](./tutorial_stuff.html). -->
+[see more](./5_tutorial.html).
