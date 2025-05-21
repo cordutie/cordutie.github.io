@@ -67,7 +67,7 @@ top_right: |
 <a href="./5_thoughts.html" style="color: white">💡 Projects/Thoughts</a>
 </h2>
 <div class="project-list">
-  <a href="./project1.html" class="project-box">
+  <a href="./thoughts/005_ddsp_textures.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>DDSP + Texture Sounds + Statistics</h3>
@@ -79,7 +79,7 @@ top_right: |
     </div>
   </a>
 
-  <a href="./project2.html" class="project-box">
+  <a href="./thoughts/004_FrFT_exploratory.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>Fractional Fourier Transform on Sounds</h3>
@@ -91,7 +91,7 @@ top_right: |
     </div>
   </a>
 
-  <a href="./project3.html" class="project-box">
+  <a href="./thoughts/003_stochres.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>Stochastic Resonances</h3>
@@ -104,8 +104,10 @@ top_right: |
   </a>
 </div>
 
-
 <p><a href="./5_thoughts.html">See more</a></p>
+
+<p><a href="./5_thasdoughts.html">See more</a></p>
+
 
 <!-- ## Tutorial
 

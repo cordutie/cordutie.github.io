@@ -1,10 +1,10 @@
 ---
-layout: inner_no_margin
-width_variable: 66%
+layout: inner
+title: K-Theory and C*-Algebras | Esteban G. webpage
 ---
 
-[back](../2_thoughts.html)
+<p><a href="./">back</a></p>
 
-This page will be about my K-Theory paper.
+<p>What am I doing with my life?</p>
 
-[back](../2_thoughts.html)
+<p><a href="./">back</a></p>
