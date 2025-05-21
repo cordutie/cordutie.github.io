@@ -1,27 +1,46 @@
 ---
-layout: split-layout
-title: Home
+layout: index
+title: Home | Esteban G. webpage
 top_left: |
-    <p> Place to leave stuff I've done so I don't forget about them. </p>
-    <p style="display: flex; gap: 10px; align-items: center;">
-    <a href="mailto:your@email.com" target="_blank" rel="noopener">
-        <img src="/assets/img/gmail_logo.png" alt="Email" width="30" height="30" />
-    </a>
-    <a href="https://github.com/yourusername" target="_blank" rel="noopener">
-        <img src="/assets/img/gh_logo.png" alt="GitHub" width="30" height="30"/>
-    </a>
-    <a href="https://scholar.google.com/citations?user=XXXX" target="_blank" rel="noopener">
-        <img src="/assets/img/scholar_logo.png" alt="Google Scholar" width="30" height="30" />
-    </a>
-    </p>
-top_right: |
-    <h2>About me</h2>
-    <p>Blabla</p>
+    <h2 style="display: flex; align-items: center;">
+    <a href="./1_me.html" style="color: white">🎵 About me</a>
+    <span style="flex-grow: 1;"></span> <!-- This acts like \hfill -->
+        <a href="mailto:esteban.gutierrezc@upf.edu" target="_blank" rel="noopener">
+        <img src="/assets/img/gmail_logo.png" alt="Email" width="30" height="30"/>
+        </a>
+        <a href="https://github.com/cordutie" target="_blank" rel="noopener">
+        <img src="/assets/img/gh_logo.png" alt="GitHub" width="30" height="30" style="margin-left: 0.3rem;" />
+        </a>
+        <a href="https://scholar.google.com/citations?user=gcHSZUoAAAAJ&hl=es" target="_blank" rel="noopener">
+        <img src="/assets/img/scholar_logo.png" alt="Google Scholar" width="30" height="30" style="margin-left: 0.3rem;" />
+        </a>
+    </h2>
+    <p>Hey! I'm Esteban, a PhD student at the Universitat Pompeu Fabra in Barcelona. My current research focuses on sound representation for conditioned sound generation under the supervision of Xavier Serra and Frederic Font. If you wanna know more about me, press the link below 🙂
     <p><a href="./1_me.html">See more</a></p>
 
-    <h2>Publications</h2>
+top_right: |
+    <h2>
+    <a href="./2_teaching.html" style="color: white">📒 Teaching</a>
+    </h2>    
+    <div class="project-list">
+        <a href="./project1.html" class="project-box">
+        <h3>Discrete Mathematics</h3>
+        <p>Universitat Pompeu Fabra.</p>
+        </a>
+        <a href="./project2.html" class="project-box">
+        <h3>Signal Processing</h3>
+        <p>Universitat Pompeu Fabra</p>
+        </a>
+    </div>
+    <div style="margin-top: -10px;"></div>
+    <p><a href="./2_teaching.html">See past courses</a></p>
+    <div style="margin-top: 20px;"></div>
+
+    <h2>
+    <a href="./3_research.html" style="color: white">📄 Publications</a>
+    </h2>   
     <p>
-    [4] Gutiérrez, E., & Cádiz, R. F. (2024). Stochastic resonance: Molding sounds from noise. Proceedings of the 21st Sound and Music Computing Conference, July 4-6, Porto, Portugal. 
+    [4] Gutiérrez, E., & Cádiz, R. F. (2024). Stochastic resonance: Molding sounds from noise. Proceedings of the 21st Sound and Music Computing Conference, July 4-6, Porto, Portugal.
     <a href="https://zenodo.org/records/13918961" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.13918961</a>
     </p>
 
@@ -35,22 +54,59 @@ top_right: |
     <a href="https://hdl.handle.net/2027/fulcrum.tx31qm85s" target="_blank" rel="noopener noreferrer">https://hdl.handle.net/2027/fulcrum.tx31qm85s</a>
     </p>
 
-    <p><a href="./3_research.html">See more</a></p>
+    <p><a href="./3_research.html">See past publications</a></p>
 
-    <h2>Music</h2>
+    <!-- 
+    <h2>
+    <a href="./5_thoughts.html" style="color: white">Music</a>
+    </h2>    
     <p><a href="./4_music.html">See more</a></p>
+    --> 
 ---
 
-## Projects/Thoughts
+<h2>
+<a href="./5_thoughts.html" style="color: white">💡 Projects/Thoughts</a>
+</h2>
+<div class="project-list">
+  <a href="./project1.html" class="project-box">
+    <div class="project-box-content">
+      <div class="project-text">
+        <h3>DDSP + Texture Sounds + Statistics</h3>
+        <p>A terrible idea with cool results.</p>
+      </div>
+      <!-- <div class="project-image">
+        <img src="/assets/img/project1.png" alt="Project 1 image" />
+      </div> -->
+    </div>
+  </a>
 
-I have some. I swear.
+  <a href="./project2.html" class="project-box">
+    <div class="project-box-content">
+      <div class="project-text">
+        <h3>Fractional Fourier Transform on Sounds</h3>
+        <p>No reason to do it but we tried anyway.</p>
+      </div>
+      <!-- <div class="project-image">
+        <img src="/assets/img/project2.png" alt="Project 2 image" />
+      </div> -->
+    </div>
+  </a>
 
-$$
-\frac{d}{dx} e^x = e^x
-$$
+  <a href="./project3.html" class="project-box">
+    <div class="project-box-content">
+      <div class="project-text">
+        <h3>Stochastic Resonances</h3>
+        <p>Adding noise might help sometimes.</p>
+      </div>
+      <!-- <div class="project-image">
+        <img src="/assets/img/project3.png" alt="Project 3 image" />
+      </div> -->
+    </div>
+  </a>
+</div>
 
-[See more](./2_thoughts.html)
 
+<p><a href="./5_thoughts.html">See more</a></p>
 
 <!-- ## Tutorial
 

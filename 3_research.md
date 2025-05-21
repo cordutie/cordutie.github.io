@@ -1,5 +1,6 @@
 ---
 layout: inner
+title: Research | Esteban G. webpage
 ---
 
 [back](./)

@@ -1,5 +1,6 @@
 ---
 layout: inner
+title: Projects & Thoughts | Esteban G. webpage
 ---
 
 [back](./)

@@ -1,5 +1,6 @@
 ---
 layout: inner
+title: Lorea | Esteban G. webpage
 ---
 
 [back](./)
