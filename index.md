@@ -5,15 +5,15 @@ top_left: |
     <h2 style="display: flex; align-items: center;">
     <a href="./1_me.html" style="color: white">🎵 About me</a>
     <span style="flex-grow: 1;"></span> <!-- This acts like \hfill -->
-        <a href="mailto:esteban.gutierrezc@upf.edu" target="_blank" rel="noopener">
-        <img src="/assets/img/gmail_logo.png" alt="Email" width="30" height="30"/>
-        </a>
-        <a href="https://github.com/cordutie" target="_blank" rel="noopener">
-        <img src="/assets/img/gh_logo.png" alt="GitHub" width="30" height="30" style="margin-left: 0.3rem;" />
-        </a>
-        <a href="https://scholar.google.com/citations?user=gcHSZUoAAAAJ&hl=es" target="_blank" rel="noopener">
-        <img src="/assets/img/scholar_logo.png" alt="Google Scholar" width="30" height="30" style="margin-left: 0.3rem;" />
-        </a>
+    <a href="mailto:esteban.gutierrezc@upf.edu" target="_blank" rel="noopener">
+    <img src="/assets/img/gmail_logo.png" alt="Email" width="30" height="30"/>
+    </a>
+    <a href="https://github.com/cordutie" target="_blank" rel="noopener">
+    <img src="/assets/img/gh_logo.png" alt="GitHub" width="30" height="30" style="margin-left: 0.3rem;" />
+    </a>
+    <a href="https://scholar.google.com/citations?user=gcHSZUoAAAAJ&hl=es" target="_blank" rel="noopener">
+    <img src="/assets/img/scholar_logo.png" alt="Google Scholar" width="30" height="30" style="margin-left: 0.3rem;" />
+    </a>
     </h2>
     <p>Hey! I'm Esteban, a PhD student at the Universitat Pompeu Fabra in Barcelona. My current research focuses on sound representation for conditioned sound generation under the supervision of Xavier Serra and Frederic Font. If you wanna know more about me, press the link below 🙂
     <p><a href="./1_me.html">See more</a></p>
@@ -23,14 +23,14 @@ top_right: |
     <a href="./2_teaching.html" style="color: white">📒 Teaching</a>
     </h2>    
     <div class="project-list">
-        <a href="./project1.html" class="project-box">
-        <h3>Discrete Mathematics</h3>
-        <p>Universitat Pompeu Fabra.</p>
-        </a>
-        <a href="./project2.html" class="project-box">
-        <h3>Signal Processing</h3>
-        <p>Universitat Pompeu Fabra</p>
-        </a>
+    <a href="./project1.html" class="project-box">
+    <h3>Discrete Mathematics</h3>
+    <p>Universitat Pompeu Fabra.</p>
+    </a>
+    <a href="./project2.html" class="project-box">
+    <h3>Signal Processing</h3>
+    <p>Universitat Pompeu Fabra</p>
+    </a>
     </div>
     <div style="margin-top: -10px;"></div>
     <p><a href="./2_teaching.html">See past courses</a></p>
