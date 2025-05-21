@@ -19,15 +19,16 @@ top_left: |
     <p><a href="./1_me.html">See more</a></p>
 top_right: |
     <h2>
-    <a href="./2_teaching.html" style="color: white">📒 Teaching</a>
-    </h2>    
+    <a href="./2_teaching.html" style="color: white">📓 Teaching</a>
+    </h2>   
+    <div style="margin-top: -10px;"></div> 
     <div class="project-list">
     <a href="./project1.html" class="project-box">
-    <h3>Discrete Mathematics</h3>
-    <p>Universitat Pompeu Fabra.</p>
+    <h3>[2024] Discrete Mathematics Seminar</h3>
+    <p>Universitat Pompeu Fabra</p>
     </a>
     <a href="./project2.html" class="project-box">
-    <h3>Signal Processing</h3>
+    <h3>[2024] Signal Processing Laboratory</h3>
     <p>Universitat Pompeu Fabra</p>
     </a>
     </div>
@@ -105,9 +106,6 @@ top_right: |
 </div>
 
 <p><a href="./5_thoughts.html">See more</a></p>
-
-<p><a href="./5_thasdoughts.html">See more</a></p>
-
 
 <!-- ## Tutorial
 
