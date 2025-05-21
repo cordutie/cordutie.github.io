@@ -17,7 +17,6 @@ top_left: |
     </h2>
     <p>Hey! I'm Esteban, a PhD student at the Universitat Pompeu Fabra in Barcelona. My current research focuses on sound representation for conditioned sound generation under the supervision of Xavier Serra and Frederic Font. If you wanna know more about me, press the link below 🙂
     <p><a href="./1_me.html">See more</a></p>
-
 top_right: |
     <h2>
     <a href="./2_teaching.html" style="color: white">📒 Teaching</a>
@@ -54,15 +53,15 @@ top_right: |
     <a href="https://hdl.handle.net/2027/fulcrum.tx31qm85s" target="_blank" rel="noopener noreferrer">https://hdl.handle.net/2027/fulcrum.tx31qm85s</a>
     </p>
 
-    <p><a href="./3_research.html">See past publications</a></p>
+    <p><a href="./3_research.html">See past publications</a></p>    
+---
 
-    <!-- 
+<!-- 
     <h2>
     <a href="./5_thoughts.html" style="color: white">Music</a>
     </h2>    
     <p><a href="./4_music.html">See more</a></p>
-    --> 
----
+--> 
 
 <h2>
 <a href="./5_thoughts.html" style="color: white">💡 Projects/Thoughts</a>
