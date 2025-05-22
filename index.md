@@ -23,12 +23,12 @@ top_right: |
     </h2>   
     <div style="margin-top: -10px;"></div> 
     <div class="project-list">
-    <a href="./project1.html" class="project-box">
-    <h3>[2024] Discrete Mathematics Seminar</h3>
+    <a href="./teaching/025_DM.html" class="project-box">
+    <h3>[2024-3] Discrete Mathematics Seminar</h3>
     <p>Universitat Pompeu Fabra</p>
     </a>
-    <a href="./project2.html" class="project-box">
-    <h3>[2024] Signal Processing Laboratory</h3>
+    <a href="./teaching/024_DSP.html" class="project-box">
+    <h3>[2024-3] Signal Processing Laboratory</h3>
     <p>Universitat Pompeu Fabra</p>
     </a>
     </div>
@@ -80,7 +80,7 @@ top_right: |
     </div>
   </a>
 
-  <a href="./thoughts/004_FrFT_exploratory.html" class="project-box">
+  <a href="./thoughts/004_FrFT.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>Fractional Fourier Transform on Sounds</h3>
