@@ -1,7 +1,6 @@
 ---
 layout: inner
-title: QDTS | Esteban G. webpage
+title: Linear Algebra [2021-1] | Esteban G. webpage
 ---
 
 <p>These sounds exist. I swear.</p>
-

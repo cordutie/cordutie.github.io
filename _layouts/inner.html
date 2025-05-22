@@ -17,11 +17,23 @@
     <div class="outer-wrapper">
       <div class="container">
         <div class="bottom-section">
+          <!-- Navigation Bar -->
+        <nav class="inner-navbar">
+          <div class="nav-left">
+            <a href="{{ '/' | relative_url }}">Home</a>
+          </div>
+          <div class="nav-right">
+            <a href="{{ '/1_me.html' | relative_url }}">Bio/CV</a>
+            <a href="{{ '/2_teaching.html' | relative_url }}">Teaching</a>
+            <a href="{{ '/3_research.html' | relative_url }}">Publications</a>
+            <a href="{{ '/5_thoughts.html' | relative_url }}">Projects/Thoughts</a>
+            <!-- <a href="{{ '/4_music.html' | relative_url }}">Music</a> -->
+          </div>
+        </nav>
+          <!-- Main Page Content -->
           {{ content }}
         </div>
       </div>
     </div>
-
-    <!-- <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script> -->
   </body>
 </html>

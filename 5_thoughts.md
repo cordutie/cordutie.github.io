@@ -3,13 +3,10 @@ layout: inner
 title: Projects & Thoughts | Esteban G. webpage
 ---
 
-<p><a href="./">back</a></p>
+<h2>💡 Projects/Thoughts</h2>
 
-<h2>
-<a href="./thoughts/005_ddsp_textures.html" style="color: white">💡 Projects/Thoughts</a>
-</h2>
 <div class="project-list">
-  <a href="./project1.html" class="project-box">
+  <a href="./thoughts/005_ddsp_textures.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>DDSP + Texture Sounds + Statistics</h3>
@@ -21,7 +18,7 @@ title: Projects & Thoughts | Esteban G. webpage
     </div>
   </a>
 
-  <a href="./thoughts/004_FrFT_exploratory.html" class="project-box">
+  <a href="./thoughts/004_FrFT.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>Fractional Fourier Transform on Sounds</h3>
@@ -57,18 +54,16 @@ title: Projects & Thoughts | Esteban G. webpage
     </div>
   </a>
 
-  <a href="./thoughts/003_stochres.html" class="project-box">
+  <a href="./thoughts/001_K_theory.html" class="project-box">
     <div class="project-box-content">
       <div class="project-text">
         <h3>K-Theory and C*-Algebras</h3>
         <p>K-Theory for friends.</p>
       </div>
-      <!-- <div class="project-image">
+      <div class="project-image">
         <img src="/assets/img/project3.png" alt="Project 3 image" />
-      </div> -->
+      </div>
     </div>
   </a>
 
 </div>
-
-<p><a href="./">back</a></p>

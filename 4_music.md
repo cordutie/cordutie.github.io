@@ -3,8 +3,6 @@ layout: inner
 title: Music | Esteban G. webpage
 ---
 
-[back](./)
+<h2>🎧 Music</h2>
 
 I will eventually fill this I swear.
-
-[back](./)

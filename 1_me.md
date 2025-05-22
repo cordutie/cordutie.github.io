@@ -3,7 +3,7 @@ layout: inner
 title: About me | Esteban G. webpage
 ---
 
-<p><a href="./">back</a></p>
+<h2>🎵 Bio</h2>
 
 <p>Esteban is a PhD student at the Universitat Pompeu Fabra in Barcelona, where he conducts research in the Music Technology Group under the supervision of Xavier Serra and Frederic Font. His work focuses on sound representations for conditioned sound generation, at the intersection of machine learning and sound synthesis.</p>
 
@@ -11,4 +11,10 @@ title: About me | Esteban G. webpage
 
 <p>In parallel with his research, he has taught a range of undergraduate mathematics courses—including Calculus, Linear Algebra, Ordinary Differential Equations, and Discrete Mathematics—at PUC, USACH, and UPF. His academic interests lie broadly in sound synthesis, signal processing, and the computational modeling of music and sound.</p>
 
-<p><a href="./">back</a></p>
+<h2> Education</h2>
+
+Blabla
+
+<h2> Experience</h2>
+
+Blabla
