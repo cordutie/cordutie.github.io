@@ -113,7 +113,7 @@ hr {
 }
 
 .outer-wrapper {
-  width: 100%;
+  // width: 100%;
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
@@ -139,15 +139,26 @@ hr {
   align-items: flex-start;
 }
 
+// .top-left,
+// .top-right {
+//   flex: 1;
+//   padding: 1rem;
+// //   background-color: #1a1a1a;
+//   border-radius: 10px;
+//   overflow: visible;
+//   min-height: 200px;
+// //   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+// }
+
 .top-left,
 .top-right {
   flex: 1;
   padding: 1rem;
-//   background-color: #1a1a1a;
-  border-radius: 10px;
-  overflow: visible;
-  min-height: 200px;
-//   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  // border-radius: 10px;
+  overflow: hidden; /* helps avoid accidental overflow */
+  min-width: 0; /* ✅ allows flex items to shrink below content size */
+  max-width: 100%;
+  box-sizing: border-box; /* ensures padding doesn't add to width */
 }
 
 /* Profile Picture */
@@ -192,6 +203,7 @@ hr {
 /* Project List Container (Vertical Layout) ---------------------------------------------------------------------- */
 /* ========== Vertical Project List ========== */
 .project-list {
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -201,6 +213,7 @@ hr {
 
 /* Project Box (shared appearance) */
 .project-box {
+  max-width: 100%;
   background-color: #121212;
   color: white;
   padding: 1rem;
@@ -229,6 +242,7 @@ hr {
 
 /* Shared inner layout */
 .project-box-content {
+  max-width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
