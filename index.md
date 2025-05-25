@@ -40,18 +40,26 @@ top_right: |
     <a href="./3_research.html" style="color: white">📄 Publications</a>
     </h2>   
     <p>
-    [4] Gutiérrez, E., & Cádiz, R. F. (2024). Stochastic resonance: Molding sounds from noise. Proceedings of the 21st Sound and Music Computing Conference, July 4-6, Porto, Portugal.
-    <a href="https://zenodo.org/records/13918961" target="_blank" rel="noopener noreferrer">https://doi.org/10.5281/zenodo.13918961</a>
+    [6] Gutiérrez, E., Font, F., Serra, X. & Wyse, L. (2025). <i>A Statistics-Driven Differentiable Approach for Sound Texture Synthesis and Analysis.</i> 28th International Conference on Digital Audio Effects (DAFx25) (To be published)
+    <a href="#" style="font-weight:bold;">[DOI]</a>
+    <a href="#" style="font-weight:bold;">[Repository]</a>
+    <a href="#" style="font-weight:bold;">[Webpage]</a>
+    <a href="#" style="font-weight:bold;">[Dissemination Post]</a>
     </p>
 
     <p>
-    [3] Esteban Gutiérrez, Christopher Haworth, Rodrigo F. Cádiz; <em>Generating Sonic Phantoms with Quadratic Difference Tone Spectrum Synthesis.</em> Computer Music Journal (2023); 47 (3): 19–34. doi: 
-    <a href="https://doi.org/10.1162/COMJ_a_00687" target="_blank" rel="noopener noreferrer">https://doi.org/10.1162/COMJ_a_00687</a>
+    [5] Gutiérrez, E., Cádiz, R., Sing-Long, C., Font, F. & Serra, X. (2025). <i>Fractional Fourier Synthesis.</i> International Computer Music Conference 2025: Curiosity Play Innovation. Michigan Publishing Services. (To be published)
+    <a href="#" style="font-weight:bold;">[DOI]</a>
+    <!-- <a href="#" style="font-weight:bold;">[Repository]</a> -->
+    <a href="#" style="font-weight:bold;">[Webpage]</a>
+    <a href="#" style="font-weight:bold;">[Dissemination Post]</a>
     </p>
 
     <p>
-    [2] Gutiérrez, E., Cádiz, R. & Haworth, C. (2023). Generating Quadratic Difference Tone Spectra for Auditory Distortion Synthesis. International Computer Music Conference 2023: The Sound of Changes, 237-243. Michigan Publishing Services. 
-    <a href="https://hdl.handle.net/2027/fulcrum.tx31qm85s" target="_blank" rel="noopener noreferrer">https://hdl.handle.net/2027/fulcrum.tx31qm85s</a>
+    [4] Gutiérrez, E., & Cádiz, R. F. (2024). <i>Stochastic resonance: Molding sounds from noise.</i> Proceedings of the 21st Sound and Music Computing Conference, July 4–6, Porto, Portugal.
+    <a href="https://zenodo.org/records/13918961" style="font-weight:bold;">[DOI]</a>
+    <a href="#" style="font-weight:bold;">[Repository]</a>
+    <a href="#" style="font-weight:bold;">[Dissemination Post]</a>
     </p>
 
     <p><a href="./3_research.html">See past publications</a></p>    
