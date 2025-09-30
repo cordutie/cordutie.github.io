@@ -13,8 +13,8 @@ title: About me | Esteban G. webpage
 
 <h2> Education</h2>
 
-Blabla
+<p>🚧 Under construction</p>
 
 <h2> Experience</h2>
 
-Blabla
+<p>🚧 Under construction</p>
