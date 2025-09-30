@@ -1,0 +1,370 @@
+---
+---
+
+@import "fonts";
+@import "rouge-github";
+
+/* Reset & Base Styles */
+body {
+  background-color: #000;
+  padding: 50px;
+  font: 14px/1.5 "PT Sans", sans-serif;
+  color: #fff;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  margin: 10 0 10px;
+}
+
+h1 { font-size: 28px; line-height: 1.1; }
+h2, h3, h4, h5, h6 { line-height: 1.1; }
+
+p, ul, ol, table, pre, dl {
+  margin: 0 0 10px;
+}
+
+a {
+  color: #4ea8ff;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: #90caff;
+  font-weight: bold;
+}
+a small {
+  font-size: 11px;
+  color: #aaa;
+  display: block;
+  margin-top: -0.3em;
+}
+a:hover small {
+  color: #ccc;
+}
+
+blockquote {
+  border-left: 2px solid #333;
+  padding-left: 20px;
+  font-style: italic;
+  color: #ccc;
+}
+
+code, pre {
+  font-family: Monaco, Consolas, monospace;
+  color: #eee;
+}
+pre {
+  padding: 8px 15px;
+  background: #1c1c1c;
+  border-radius: 5px;
+  border: 1px solid #333;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th, td {
+  text-align: left;
+  padding: 5px 10px;
+  border-bottom: 1px solid #333;
+}
+th, dt {
+  color: #fff;
+  font-weight: 700;
+}
+
+img {
+  max-width: 100%;
+}
+
+kbd {
+  background-color: #222;
+  border: 1px solid #444;
+  border-bottom-color: #666;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #666;
+  color: #fff;
+  display: inline-block;
+  font-size: 11px;
+  line-height: 10px;
+  padding: 3px 5px;
+  vertical-align: middle;
+}
+
+strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+small {
+  font-size: 11px;
+}
+
+hr {
+  border: 0;
+  background: #333;
+  height: 1px;
+  margin: 0 0 20px;
+}
+
+.outer-wrapper {
+  // width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Brighter background behind top section */
+.top-wrapper {
+    background-color: #1b1b1b; /* slightly brighter than #000 */
+    border-radius: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.02);
+  }  
+
+/* Panels Layout */
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 0;
+  width: 100%;
+  align-items: flex-start;
+}
+
+// .top-left,
+// .top-right {
+//   flex: 1;
+//   padding: 1rem;
+// //   background-color: #1a1a1a;
+//   border-radius: 10px;
+//   overflow: visible;
+//   min-height: 200px;
+// //   box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+// }
+
+.top-left,
+.top-right {
+  flex: 1;
+  padding: 1rem;
+  // border-radius: 10px;
+  overflow: hidden; /* helps avoid accidental overflow */
+  min-width: 0; /* ✅ allows flex items to shrink below content size */
+  max-width: 100%;
+  box-sizing: border-box; /* ensures padding doesn't add to width */
+}
+
+/* Profile Picture */
+.profile-pic {
+//   width: 500px;
+//   height: 500px;
+//   border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+/* Main Content */
+.bottom-section {
+  margin-top: 1rem;
+  background-color: #1b1b1b; /* slightly brighter than #000 */
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.03);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .top-section {
+    flex-direction: column;
+  }
+  .top-left,
+  .top-right {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px;
+  }
+}
+
+/* Project List Container (Vertical Layout) ---------------------------------------------------------------------- */
+/* ========== Vertical Project List ========== */
+.project-list {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Project Box (shared appearance) */
+.project-box {
+  max-width: 100%;
+  background-color: #121212;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: block;
+}
+
+.project-box:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.project-box h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.project-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Shared inner layout */
+.project-box-content {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.project-text {
+  flex: 1;
+}
+
+.project-image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* ========== Horizontal Project List ========== */
+.horizontal-project-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Horizontal Project Box (inherits same styles) */
+.horizontal-project-box {
+  background-color: #121212;
+  color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  display: block;
+
+  flex: 1 1 calc(50% - 0.75rem);
+  max-width: calc(50% - 0.75rem);
+  box-sizing: border-box;
+}
+
+.horizontal-project-box:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.horizontal-project-box h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+}
+
+.horizontal-project-box p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Reuse inner layout classes if needed */
+.horizontal-project-box .project-box-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .horizontal-project-box {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+
+/* Navigation Bar */
+.inner-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #333;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 2rem;
+  background-color: #1b1b1b;
+}
+
+/* Base nav link style */
+.nav-left a,
+.nav-right a {
+  color: #4ea8ff;
+  font-weight: bold; /* already bold to avoid layout shift */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.85;
+}
+
+/* Home (left) spacing */
+.nav-left a {
+  margin-right: 1rem;
+}
+
+/* Right side layout */
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/* Hover effect without layout shift */
+.nav-left a:hover,
+.nav-right a:hover {
+  color: #90caff;
+  opacity: 1;
+}

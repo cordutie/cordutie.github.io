@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}" />
+    <!-- MathJax for LaTeX-style math -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+  </head>
+  <body>
+    <div class="outer-wrapper">
+      <!-- <div class="container"> -->
+        <div class="bottom-section">
+          <!-- Navigation Bar -->
+        <nav class="inner-navbar">
+          <div class="nav-left">
+            <a href="{{ '/' | relative_url }}">Home</a>
+          </div>
+          <div class="nav-right">
+            <a href="{{ '/1_me.html' | relative_url }}">Bio/CV</a>
+            <a href="{{ '/2_teaching.html' | relative_url }}">Teaching</a>
+            <a href="{{ '/3_research.html' | relative_url }}">Publications</a>
+            <a href="{{ '/5_thoughts.html' | relative_url }}">Projects/Thoughts</a>
+            <!-- <a href="{{ '/4_music.html' | relative_url }}">Music</a> -->
+          </div>
+        </nav>
+          <!-- Main Page Content -->
+          {{ content }}
+        </div>
+      <!-- </div> -->
+    </div>
+  </body>
+</html>
