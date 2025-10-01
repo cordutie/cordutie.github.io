@@ -65,16 +65,14 @@ top_right: |
     <p><a href="./3_research.html">See past publications</a></p>    
 ---
 
-<!-- 
-    <h2>
-    <a href="./5_thoughts.html" style="color: white">Music</a>
-    </h2>    
-    <p><a href="./4_music.html">See more</a></p>
---> 
+<!-- Proyectooos -->
+
+<div class="bottom-section">
 
 <h2>
 <a href="./5_thoughts.html" style="color: white">💡 Projects/Thoughts</a>
 </h2>
+
 <div class="project-list">
   <a href="./thoughts/005_ddsp_textures.html" class="project-box">
     <div class="project-box-content">
@@ -114,6 +112,34 @@ top_right: |
 </div>
 
 <p><a href="./5_thoughts.html">See more</a></p>
+
+</div>
+
+
+<!-- Músicaaaa -->
+
+
+<!-- <div class="bottom-section">
+
+<h2>
+<a href="./5_thoughts.html" style="color: white">🎧 Music</a>
+</h2>
+
+<div class="project-list">
+  <a href="./music/005_ddsp_textures.html" class="project-box">
+    <div class="project-box-content">
+      <div class="project-text">
+        <h3>DDSP + Texture Sounds + Statistics</h3>
+        <p>A terrible idea with cool results.</p>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<p><a href="./4_music.html">See more</a></p>
+
+</div> -->
 
 <!-- ## Tutorial
 

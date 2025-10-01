@@ -1,6 +1,6 @@
 ---
 layout: inner
-title: K-Theory and C*-Algebras | Esteban G. webpage
+title: Noisy 3 | Esteban G. webpage
 ---
 
 <p>What am I doing with my life?</p>
