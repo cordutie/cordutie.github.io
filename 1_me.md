@@ -11,10 +11,21 @@ title: About me | Esteban G. webpage
 
 <p>In parallel with his research, he has taught a range of undergraduate mathematics courses—including Calculus, Linear Algebra, Ordinary Differential Equations, and Discrete Mathematics—at PUC, USACH, and UPF. His academic interests lie broadly in sound synthesis, signal processing, and the computational modeling of music and sound.</p>
 
-<h2> Education</h2>
+<h2>🏫 Education</h2>
 
 <p>🚧 Under construction</p>
 
-<h2> Experience</h2>
+<h2>💼 Experience</h2>
 
 <p>🚧 Under construction</p>
+
+<h2>📰 News</h2>
+
+<li style="margin-left: 20px"><strong>[2025/10]</strong> This term, I’ll be teaching Discrete Mathematics at Universitat Pompeu Fabra.</li>
+<li style="margin-left: 20px"><strong>[2025/09]</strong> Successfully defended my PhD proposal!</li>
+<li style="margin-left: 20px"><strong>[2025/09]</strong> Presented my paper on custom texture sound loss and neural network models, accepted at DAFx 2025, in Ancona, Italy.</li>
+<li style="margin-left: 20px"><strong>[2025/07]</strong> Served as a Teaching Assistant at the Generative Music AI Workshop at Universitat Pompeu Fabra.</li>
+<li style="margin-left: 20px"><strong>[2025/06]</strong> Paper accepted at DAFx! See you in Italy :)</li>
+<li style="margin-left: 20px"><strong>[2025/06]</strong> Presented my paper on sound synthesis using the Fractional Fourier Transform, accepted at ICMC 2025, in Boston, USA.</li>
+<li style="margin-left: 20px"><strong>[2025/03]</strong> Paper accepted at ICMC! See you in the USA :)</li>
+<li style="margin-left: 20px"><strong>[2024/10]</strong> Started my PhD in Engineering with the Music Technology Group at Universitat Pompeu Fabra.</li>
