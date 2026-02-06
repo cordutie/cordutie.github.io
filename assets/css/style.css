@@ -1,0 +1,217 @@
+/* RESET: Remove default spacing. This is applied to all elements in the webpage. */
+* {
+    margin:  0; /* Space outside */
+    padding: 0; /* Space inside */
+    box-sizing: border-box; /* Include padding/border in size calculation */
+}
+
+/* COLOR PALETTE */
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --castanya: #b44548;
+    --brick: #bd817e;
+    --lino: #fff4f3;
+    --pale: #f3eed9;
+    --dev: #FFEE8C;
+    /* --dev: transparent; */
+}
+
+/* BASE STYLES ---------------------------------------------------------------------------------------------------------*/
+body { /* Body env */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; /* System font stack. Use the first available. */
+    font-size: 16px; /* Base text size */
+    line-height: 1.5; /* Adds half of that on top and the other on bottom (measured in multiples of font size)*/
+    background-color: var(--pale); /* Black background */
+}
+
+h1, h2, h3, h4, h5, h6 { /* Headers */
+    margin-bottom: 1rem; /* Space below headings */
+}
+
+p { /* Paragraph env */
+    margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+a { /* Links */
+    color: inherit; /* Use parent text color */
+    text-decoration: none; /* No underline by default */
+}
+
+a:hover { /* Links animation */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* NAVBAR ---------------------------------------------------------------------------------------------------------------*/
+.navbar { /* Top navigation bar */
+    /* position: sticky;  */
+    top: 0; /* Stick to top edge */
+    width: 100%; /* Full width */
+    background-color: var(--castanya); /* Background color */
+    padding: 1rem 2rem; /* Internal spacing */
+    display: flex; /* Horizontal layout */
+    gap: 2rem; /* Space between links */
+    justify-content: center; /* Center links */
+    /* border-bottom: 2px solid var(--castanya); */
+    z-index: 100; /* Stay above other content */
+}
+
+.navbar a { /* Links in navbar */
+    color: var(--white); /* Link color */
+    font-weight: 600; /* Bold text */
+    padding: 0.5rem 1rem; /* Clickable area */
+    /* border-radius: 4px; */
+    transition: background-color 0.2s; /* Smooth hover */
+}
+
+.navbar a:hover { /* Hover effect */
+    /* background-color: var(--pale); */
+    text-shadow: 0 0 2px var(--lino); /* Fake bold without layout shift */
+    text-decoration: none; /* Remove underline */
+}
+
+/* BOX ENVIRONMENTS -------------------------------------------------------------------------------------------------------*/
+.box { /* BOX: Responsive container */
+    width: 100%;       /* Take full available width */
+    max-width: 1000px; /* Don't get too wide */
+    margin: 0rem auto; /* top and bottom in first number, left and right for the second. Auto will center it automatically.*/
+    padding: 2rem; /* Internal margin */
+    border: 1px solid var(--dev);
+    background-color: transparent;
+}
+
+.box-split { /* Two-column inside a box */
+    display: flex; /* Side-by-side */
+    flex-direction: row; /* Force horizontal by default */
+    gap: 2rem; /* Space between columns */
+}
+
+.box-col { /* Each column */
+    flex: 1; /* Equal width */
+    min-width: 0; /* Prevent overflow */
+    border: 1px solid var(--dev);
+}
+
+@media (min-width: 2001px) { /* On very large screens, box increases with the screen size */
+    .box {
+        max-width: 50vw;
+    }
+}
+
+@media (max-width: 1000px) { /* On smaller screens, stack columns vertically */
+    .box-split {
+        flex-direction: column;
+    }
+}
+
+/* SECTION ENVIRONMENTS --------------------------------------------------------------------------------------------------*/
+.section { /* Full-width page section */
+    min-height: 50vh; /* At least half the viewport height */
+    display: flex; /* Center content */
+    flex-direction: column; /* Stack vertically */
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+}
+
+.section-fullscreen { /* Full height section for hero/landing */
+    min-height: 100vh; /* Full viewport height */
+}
+
+.section-castanya {
+    background-color: var(--castanya);
+    color: #ffffff; /* White text */
+}
+
+.section-brick {
+    background-color: var(--brick);
+    color: #ffffff; /* White text */
+}
+
+.section-lino {
+    background-color: var(--lino);
+    color: #000000; /* Black text */
+}
+
+.section-pale {
+    background-color: var(--pale);
+    color: #000000; /* Black text */
+}
+
+/* Blog Card VENV ----------------------------------------------------------------------------------------- */
+.blog-card-compact {
+    max-width: 700px;
+    margin: 1.5rem auto;
+    display: flex; /* Side-by-side layout */
+    border-radius: 8px;
+    background-color: #0a0a0a;
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+    transition: all 0.2s;
+}
+
+.blog-card-compact:hover {
+    border-color: #4ea8ff;
+    background-color: #111;
+}
+
+.blog-card-compact-image {
+    width: 180px; /* Fixed width on left */
+    height: 180px;
+    object-fit: cover;
+    flex-shrink: 0; /* Don't shrink */
+}
+
+.blog-card-compact-content {
+    padding: 1.5rem;
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card-compact h2 {
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.blog-card-compact-meta {
+    font-size: 0.8rem;
+    color: #777;
+    margin-bottom: 0.8rem;
+}
+
+.blog-card-compact p {
+    font-size: 0.95rem;
+    margin: 0;
+    flex: 1; /* Push tags to bottom */
+}
+
+.blog-card-compact-tags {
+    display: flex;
+    gap: 0.3rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.blog-card-compact-tag {
+    display: inline-block;
+    background-color: #1a1a1a;
+    color: #4ea8ff;
+    padding: 0.25rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.75rem;
+    border: 1px solid #333;
+}
+
+/* Mobile: Compact becomes stacked */
+@media (max-width: 768px) {
+    .blog-card-compact {
+        flex-direction: column; /* Stack vertically */
+    }
+    
+    .blog-card-compact-image {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+
