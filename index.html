@@ -9,6 +9,9 @@
 </head>
 
 <body style="background-color: var(--castanya);">
+    <button class="dev-toggle" id="dev-toggle" type="button">Dev: off</button>
+    
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <nav class="navbar">
         <a href="./index.html">Home</a>
         <a href="./projects.html">Projects</a>
@@ -17,26 +20,58 @@
         <a href="./music.html">Music</a>
         <a href="./about.html">About</a>
     </nav>
+    <div class="nav-divider"></div>
 
-    <div class="section section-castanya section-fullscreen">
+    <!-- TOP SECTION -------------------------------------------------------------->
+    <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
-            <h1>Two-Column Box</h1>
             <div class="box-split">
-                <div class="box-col">
-                    <h2>Left Column</h2>
-                    <p>Put text, lists, or images here.</p>
-                    <p>This column will stack on top when the screen is small.</p>
+                <div class="box-col">                   
+                <h1 style="text-align: center; padding-bottom: 1rem;"><a href="./index.html">Esteban G. (@cordutie)</a></h1>
                 </div>
                 <div class="box-col">
-                    <h2>Right Column</h2>
-                    <p>Use this for extra details, links, or a small bio.</p>
-                    <p>The gap between columns is controlled by the CSS.</p>
+                </div>
+            </div>
+            <div class="box-split">
+                <div class="box-col">
+                    <!-- HEADER -->
+                    <!-- <h1 style="text-align: center; padding-bottom: 1rem;"><a href="./index.html">Esteban G. (@cordutie)</a></h1> -->
+                    <!-- IMAGE -->
+                    <img src="/assets/img/me.jpg" alt="Esteban G." width="300" height="300" class="profile-img" style="border-radius: 50%;" />
+                </div>
+                <div class="box-col" style="display: flex; flex-direction: column; justify-content: center;">
+                    <!-- HEADER -->
+                    <h1 style="display: flex; align-items: center;">
+                        <a href="./about.html">About me</a>
+                        <span style="flex-grow: 1;"></span>
+                        <a href="mailto:esteban.gutierrezc@upf.edu" target="_blank" rel="noopener">
+                        <img src="/assets/img/gmail_logo.png" alt="Email" width="40" height="40"/>
+                        </a>
+                        <a href="https://github.com/cordutie" target="_blank" rel="noopener">
+                        <img src="/assets/img/gh_logo.png" alt="GitHub" width="40" height="40" style="margin-left: 0.3rem;" />
+                        </a>
+                        <a href="https://scholar.google.com/citations?user=gcHSZUoAAAAJ&hl=es" target="_blank" rel="noopener">
+                        <img src="/assets/img/scholar_logo.png" alt="Google Scholar" width="40" height="40" style="margin-left: 0.3rem;" />
+                        </a>
+                    </h1>
+                    <!-- PARAGRAPH -->
+                    <p>Hi! I'm Esteban, a predoctoral researcher at the Music Technology Group (MTG) in Barcelona, where I work with the Freesound team. My current research focuses on sound representation for conditioned sound generation, under the supervision of Xavier Serra, Lonce Wyse, and Frederic Font. If you’d like to learn more about me, click the link below :)</p>
+                    <p style="display: flex; justify-content: flex-end;"><a href="./about.html">See more</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="section section-brick">
+    <!-- NEWS SECTION -------------------------------------------------------------->
+    <div class="section section-brick section-vcentered">
+        <div class="box">
+            <h1>News</h1>
+            <div class="news-list" data-news-src="assets/data/news.csv" data-news-limit="3"></div>
+        </div>
+    </div>
+
+    <!-- PROJECTS SECTION ----------------------------------------------------------->
+    <div class="section section-lino section-vcentered">
         <div class="box">
             <h1>About Me</h1>
             <p>Short intro about who you are and what you do.</p>
@@ -45,7 +80,7 @@
         </div>
     </div>
 
-    <div class="section section-lino">
+    <div class="section section-pale section-vcentered">
         <div class="box">
             <h1>About Me</h1>
             <p>Short intro about who you are and what you do.</p>
@@ -54,7 +89,7 @@
         </div>
     </div>
 
-    <div class="section section-pale">
+    <div class="section section-castanya section-vcentered">
         <div class="box">
             <h1>About Me</h1>
             <p>Short intro about who you are and what you do.</p>
@@ -62,15 +97,25 @@
             <p>Dignissim litora et auctor facilisi porta ridiculus donec, nisl congue mauris velit phasellus scelerisque semper tristique, eget lobortis fusce placerat tempor nibh. Nullam urna massa cursus per taciti eleifend, nascetur facilisis nostra eu consequat, eros cubilia gravida aenean dictumst. Morbi interdum gravida vulputate orci habitasse est hendrerit phasellus ut ante, convallis aptent vivamus accumsan suscipit platea conubia pharetra blandit justo dapibus, risus neque dis feugiat aliquam non per fermentum tortor.</p>
         </div>
     </div>
+    <script>
+        (function () {
+            const root = document.documentElement;
+            const button = document.getElementById('dev-toggle');
+            const stored = localStorage.getItem('dev-outlines');
 
-    <div class="section section-castanya">
-        <div class="box">
-            <h1>About Me</h1>
-            <p>Short intro about who you are and what you do.</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipiscing elit curae eros lobortis interdum natoque montes nibh, quis nullam feugiat eu metus aptent nam lacus elementum pellentesque placerat id. Nibh senectus habitant parturient dignissim libero suspendisse ut montes, penatibus natoque cum orci semper nascetur euismod himenaeos, nostra a leo luctus ultricies ridiculus mattis. Scelerisque donec ut libero varius consequat ridiculus faucibus, litora vitae molestie elementum dis velit, rhoncus potenti id pulvinar imperdiet eleifend.</p>
-            <p>Dignissim litora et auctor facilisi porta ridiculus donec, nisl congue mauris velit phasellus scelerisque semper tristique, eget lobortis fusce placerat tempor nibh. Nullam urna massa cursus per taciti eleifend, nascetur facilisis nostra eu consequat, eros cubilia gravida aenean dictumst. Morbi interdum gravida vulputate orci habitasse est hendrerit phasellus ut ante, convallis aptent vivamus accumsan suscipit platea conubia pharetra blandit justo dapibus, risus neque dis feugiat aliquam non per fermentum tortor.</p>
-        </div>
-    </div>
+            if (stored === 'on') {
+                root.classList.add('dev-on');
+                button.textContent = 'Dev: on';
+            }
+
+            button.addEventListener('click', () => {
+                const isOn = root.classList.toggle('dev-on');
+                button.textContent = isOn ? 'Dev: on' : 'Dev: off';
+                localStorage.setItem('dev-outlines', isOn ? 'on' : 'off');
+            });
+        })();
+    </script>
+    <script src="assets/js/news.js"></script>
 </body>
 
 </html>

@@ -13,8 +13,12 @@
     --brick: #bd817e;
     --lino: #fff4f3;
     --pale: #f3eed9;
-    --dev: #FFEE8C;
-    /* --dev: transparent; */
+    --dev: transparent; /* Default (production) */
+    --page-width: 960px; /* IMPORTANT: Update @media queries below if changed */
+}
+
+:root.dev-on {
+    --dev: #FFEE8C; /* Development outline color */
 }
 
 /* BASE STYLES ---------------------------------------------------------------------------------------------------------*/
@@ -29,6 +33,14 @@ h1, h2, h3, h4, h5, h6 { /* Headers */
     margin-bottom: 1rem; /* Space below headings */
 }
 
+h1 img, h2 img, h3 img { /* Center images vertically in headers */
+    vertical-align: middle;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { /* Links inside headers inherit header weight */
+    font-weight: inherit;
+}
+
 p { /* Paragraph env */
     margin-bottom: 1rem; /* Space between paragraphs */
 }
@@ -36,23 +48,61 @@ p { /* Paragraph env */
 a { /* Links */
     color: inherit; /* Use parent text color */
     text-decoration: none; /* No underline by default */
+    font-weight: 600; /* Bold text */
 }
 
 a:hover { /* Links animation */
-    text-decoration: underline; /* Underline on hover */
+    text-shadow: 0 0 2px; /* Fake bold without layout shift */
+    text-decoration: none; /* Remove underline */
+}
+
+.dev-toggle { /* Dev helper button */
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 999;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    border: 1px solid #444;
+    background: #111;
+    color: #fff;
+    cursor: pointer;
+}
+
+.dev-toggle:hover {
+    background: #222;
+}
+
+.profile-img { /* Responsive profile image */
+    max-width: clamp(100px, 50vw, 300px);
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
 }
 
 /* NAVBAR ---------------------------------------------------------------------------------------------------------------*/
+:root {
+    --navbar-height: 3rem; /* Define once */
+}
+
 .navbar { /* Top navigation bar */
     /* position: sticky;  */
     top: 0; /* Stick to top edge */
     width: 100%; /* Full width */
     background-color: var(--castanya); /* Background color */
-    padding: 1rem 2rem; /* Internal spacing */
+    padding: 0rem 2rem; /* Internal spacing */
     display: flex; /* Horizontal layout */
-    gap: 2rem; /* Space between links */
-    justify-content: center; /* Center links */
-    /* border-bottom: 2px solid var(--castanya); */
+    flex-wrap: wrap; /* Wrap to multiple lines on narrow screens */
+    justify-content: center; /* Center links horizontally */
+    align-items: center; /* Vertically center links */
+    align-content: center; /* Center wrapped lines vertically */
+    column-gap: 2rem; /* Horizontal space between links */
+    row-gap: 0.5rem; /* Vertical space between wrapped lines */
+    min-height: var(--navbar-height); /* Minimum height, can grow if needed */
+    border: 1px solid var(--dev);
     z-index: 100; /* Stay above other content */
 }
 
@@ -70,10 +120,54 @@ a:hover { /* Links animation */
     text-decoration: none; /* Remove underline */
 }
 
+.nav-divider { /* Thin line under navbar */
+    height: 1px;
+    width: 40%;
+    margin: 0rem auto 0; /* Centered, with space above */
+    background-color: var(--lino);
+    opacity: 1;
+}
+
+/* NEWS LIST -----------------------------------------------------------------------------------------------------------*/
+.news-list { /* Container for news items */
+    border-top: 1px solid var(--lino);
+    margin-top: 1rem;
+}
+
+.news-item { /* One news row */
+    display: grid;
+    grid-template-columns: 25% 1fr; /* Date column percentage, content takes rest */
+    gap: 2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--lino);
+}
+
+.news-date { /* Left column (date) */
+    font-weight: 600;
+    text-transform: uppercase;
+    /* letter-spacing: 0.03em; */
+    font-size: 1rem;
+}
+
+.news-content { /* Right column (content) */
+    font-size: 1rem;
+}
+
+.news-content p { /* Keep two-line feel */
+    margin-bottom: 0rem;
+}
+
+@media (max-width: 768px) {
+    .news-item {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+}
+
 /* BOX ENVIRONMENTS -------------------------------------------------------------------------------------------------------*/
 .box { /* BOX: Responsive container */
     width: 100%;       /* Take full available width */
-    max-width: 1000px; /* Don't get too wide */
+    max-width: var(--page-width); /* Don't get too wide */
     margin: 0rem auto; /* top and bottom in first number, left and right for the second. Auto will center it automatically.*/
     padding: 2rem; /* Internal margin */
     border: 1px solid var(--dev);
@@ -92,13 +186,21 @@ a:hover { /* Links animation */
     border: 1px solid var(--dev);
 }
 
-@media (min-width: 2001px) { /* On very large screens, box increases with the screen size */
+.box-col-center { /* Center content inside a column */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 1920px) { /* 2 × var(--page-width) */
     .box {
         max-width: 50vw;
     }
 }
 
-@media (max-width: 1000px) { /* On smaller screens, stack columns vertically */
+@media (max-width: 960px) { /* var(--page-width) */
     .box-split {
         flex-direction: column;
     }
@@ -107,14 +209,18 @@ a:hover { /* Links animation */
 /* SECTION ENVIRONMENTS --------------------------------------------------------------------------------------------------*/
 .section { /* Full-width page section */
     min-height: 50vh; /* At least half the viewport height */
+    border-bottom: 1px solid var(--dev);
+}
+
+.section-fullscreen { /* Full height section for hero/landing */
+    min-height: calc(100vh - var(--navbar-height)); /* Full viewport height */
+}
+
+.section-vcentered { /* Full height section for hero/landing */
     display: flex; /* Center content */
     flex-direction: column; /* Stack vertically */
     align-items: center; /* Center horizontally */
     justify-content: center; /* Center vertically */
-}
-
-.section-fullscreen { /* Full height section for hero/landing */
-    min-height: 100vh; /* Full viewport height */
 }
 
 .section-castanya {
