@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
+    <title>Esteban G. | About</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body style="background-color: var(--castanya);">
+    <button class="dev-toggle" id="dev-toggle" type="button">Dev: off</button>
     <nav class="navbar">
         <a href="./index.html">Home</a>
         <a href="./projects.html">Projects</a>
@@ -19,21 +20,49 @@
     </nav>
     <div class="nav-divider"></div>
 
-    <div class="section section-castanya section-fullscreen">
+    <!-- BIO SECTION ----------------------------------------------------------------------->
+    <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
-            <h1 style="text-align: center;">🎸 Bio</h1>
-            <p>🚧 Under construction</p>
+            <h1>Bio</h1>
+            <div class="img-wrap">
+                <img src="/assets/img/me_portrait.jpeg" style="max-width: 400px;" alt="Esteban G." />
+            </div>            
+            <p>Esteban is a PhD student at the Universitat Pompeu Fabra in Barcelona, where he conducts research in the Music Technology Group under the supervision of Xavier Serra and Frederic Font. His work focuses on sound representations for conditioned sound generation, at the intersection of machine learning and sound synthesis.</p>
+            <p>He holds undergraduate and master’s degrees in Mathematics from the Pontificia Universidad Católica de Chile, where he worked with Dr. Giuseppe De Nittis on K-theory and its connections to edge current phenomena in the context of the Quantum Hall effect. He later pursued a Master’s in Sound and Music Computing, studying under Lonce Wyse and exploring statistics-driven DDSP approaches to texture sound synthesis.</p>
+            <p>In parallel with his research, he has taught a range of undergraduate mathematics courses—including Calculus, Linear Algebra, Ordinary Differential Equations, and Discrete Mathematics—at PUC, USACH, and UPF. His academic interests lie broadly in sound synthesis, signal processing, and the computational modeling of music and sound.</p>
         </div>
     </div>
 
+    <!-- NEWS SECTION ----------------------------------------------------------------------->
     <div class="section section-brick section-vcentered">
         <div class="box">
-            <h1>All News</h1>
+            <h1 id="news-section">All News</h1>
             <div class="news-list" data-news-src="assets/data/news.csv" data-news-limit="0"></div>
         </div>
     </div>
 
-    <script src="assets/js/news.js"></script>
+    <!-- EDUCATION AND EXPERIENCE ----------------------------------------------------------->
+    <div class="section section-lino section-vcentered">
+        <div class="box">
+            <h1 style="text-align: right;">Education</h1>
+            <div class="cv-list" data-news-src="assets/data/education.csv" data-news-limit="0"></div>
+            <h1 style="text-align: right;">Experience</h1>
+            <div class="cv-list" data-news-src="assets/data/experience.csv" data-news-limit="0"></div>
+        </div>
+    </div>
+
+    <div class="nav-divider"></div>
+    <nav class="navbar">
+        <a href="./index.html">Home</a>
+        <!-- <a href="./projects.html">Projects</a>
+        <a href="./research.html">Research</a>
+        <a href="./teaching.html">Teaching</a>
+        <a href="./music.html">Music</a>
+        <a href="./about.html">About</a> -->
+    </nav>
+
+    <script src="assets/js/dev-toggle.js"></script>
+    <script src="assets/js/list-loader.js"></script>
 
 </body>
 

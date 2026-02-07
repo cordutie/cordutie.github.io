@@ -52,7 +52,7 @@ a { /* Links */
 }
 
 a:hover { /* Links animation */
-    text-shadow: 0 0 2px; /* Fake bold without layout shift */
+    text-shadow: 0 0 1px; /* Fake bold without layout shift */
     text-decoration: none; /* Remove underline */
 }
 
@@ -81,6 +81,31 @@ a:hover { /* Links animation */
     object-fit: cover;
     display: block;
     margin: 0 auto;
+}
+
+
+/* TEXT WRAP IMAGE (floated image style) */
+.img-wrap { /* Image that text wraps around */
+    float: right; /* Text flows around it */
+    margin-left: 1.5rem; /* Space between image and text */
+    margin-bottom: 1rem; /* Space below image */
+    max-width: 300px; /* Don't grow too large */
+}
+
+.img-wrap img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 960px) { /* On very small screens, don't float */
+    .img-wrap {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 200px;
+    }
 }
 
 /* NAVBAR ---------------------------------------------------------------------------------------------------------------*/
@@ -116,13 +141,13 @@ a:hover { /* Links animation */
 
 .navbar a:hover { /* Hover effect */
     /* background-color: var(--pale); */
-    text-shadow: 0 0 2px var(--lino); /* Fake bold without layout shift */
+    text-shadow: 0 0 1px var(--lino); /* Fake bold without layout shift */
     text-decoration: none; /* Remove underline */
 }
 
 .nav-divider { /* Thin line under navbar */
     height: 1px;
-    width: 40%;
+    width: 50%;
     margin: 0rem auto 0; /* Centered, with space above */
     background-color: var(--lino);
     opacity: 1;
@@ -132,6 +157,7 @@ a:hover { /* Links animation */
 .news-list { /* Container for news items */
     border-top: 1px solid var(--lino);
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .news-item { /* One news row */
@@ -157,8 +183,45 @@ a:hover { /* Links animation */
     margin-bottom: 0rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
     .news-item {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+}
+
+/* CV LIST -----------------------------------------------------------------------------------------------------------*/
+.cv-list { /* Container for news items */
+    border-top: 1px solid var(--brick);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cv-item { /* One news row */
+    display: grid;
+    grid-template-columns: 25% 1fr; /* Date column percentage, content takes rest */
+    gap: 2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--brick);
+}
+
+.cv-date { /* Left column (date) */
+    font-weight: 600;
+    text-transform: uppercase;
+    /* letter-spacing: 0.03em; */
+    font-size: 1rem;
+}
+
+.cv-content { /* Right column (content) */
+    font-size: 1rem;
+}
+
+.cv-content p { /* Keep two-line feel */
+    margin-bottom: 0rem;
+}
+
+@media (max-width: 960px) {
+    .cv-item {
         grid-template-columns: 1fr;
         gap: 0.4rem;
     }

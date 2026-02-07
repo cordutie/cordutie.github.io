@@ -39,35 +39,41 @@
                 }
 
                 const date = fields[0];
-                const news = fields.slice(1).join(',').trim();
+                const content = fields.slice(1).join(',').trim();
 
                 if (index === 0 && date.toLowerCase() === 'date') {
                     return null;
                 }
 
-                return { date, news };
+                return { date, content };
             })
             .filter(Boolean);
     }
 
-    function renderNews(container, items, limit) {
+    function renderList(container, items, limit) {
         const maxItems = limit > 0 ? Math.min(limit, items.length) : items.length;
         const fragment = document.createDocumentFragment();
+        
+        /* Detect type from container class */
+        const isCV = container.classList.contains('cv-list');
+        const itemClass = isCV ? 'cv-item' : 'news-item';
+        const dateClass = isCV ? 'cv-date' : 'news-date';
+        const contentClass = isCV ? 'cv-content' : 'news-content';
 
         for (let i = 0; i < maxItems; i += 1) {
             const item = items[i];
             const row = document.createElement('div');
-            row.className = 'news-item';
+            row.className = itemClass;
 
             const date = document.createElement('div');
-            date.className = 'news-date';
+            date.className = dateClass;
             date.textContent = item.date;
 
             const content = document.createElement('div');
-            content.className = 'news-content';
+            content.className = contentClass;
 
             const p = document.createElement('p');
-            p.innerHTML = item.news;
+            p.innerHTML = item.content;
             content.appendChild(p);
 
             row.appendChild(date);
@@ -79,28 +85,26 @@
         container.appendChild(fragment);
     }
 
-    function initNews() {
+    function initLists() {
         const containers = document.querySelectorAll('[data-news-src]');
         if (!containers.length) return;
 
-        const src = containers[0].getAttribute('data-news-src');
+        containers.forEach((container) => {
+            const src = container.getAttribute('data-news-src');
+            const limitAttr = container.getAttribute('data-news-limit');
+            const limit = limitAttr ? parseInt(limitAttr, 10) : 0;
 
-        fetch(src)
-            .then((res) => res.text())
-            .then((text) => {
-                const items = parseCsv(text);
-                containers.forEach((container) => {
-                    const limitAttr = container.getAttribute('data-news-limit');
-                    const limit = limitAttr ? parseInt(limitAttr, 10) : 0;
-                    renderNews(container, items, isNaN(limit) ? 0 : limit);
+            fetch(src)
+                .then((res) => res.text())
+                .then((text) => {
+                    const items = parseCsv(text);
+                    renderList(container, items, isNaN(limit) ? 0 : limit);
+                })
+                .catch(() => {
+                    container.innerHTML = '<p>Unable to load list right now.</p>';
                 });
-            })
-            .catch(() => {
-                containers.forEach((container) => {
-                    container.innerHTML = '<p>Unable to load news right now.</p>';
-                });
-            });
+        });
     }
 
-    document.addEventListener('DOMContentLoaded', initNews);
+    document.addEventListener('DOMContentLoaded', initLists);
 })();

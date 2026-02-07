@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Esteban G. | Home</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body style="background-color: var(--castanya);">
     <button class="dev-toggle" id="dev-toggle" type="button">Dev: off</button>
-    
+
     <!-- NAVIGATION BAR -------------------------------------------------------->
     <nav class="navbar">
         <a href="./index.html">Home</a>
@@ -65,15 +65,16 @@
     <!-- NEWS SECTION -------------------------------------------------------------->
     <div class="section section-brick section-vcentered">
         <div class="box">
-            <h1>News</h1>
+            <h1><a href="./about.html#news-section">Latest News</a></h1>
             <div class="news-list" data-news-src="assets/data/news.csv" data-news-limit="3"></div>
+            <p style="display: flex; justify-content: flex-end;"><a href="./about.html#news-section">See more</a></p>
         </div>
     </div>
 
     <!-- PROJECTS SECTION ----------------------------------------------------------->
     <div class="section section-lino section-vcentered">
         <div class="box">
-            <h1>About Me</h1>
+            <h1>Projects</h1>
             <p>Short intro about who you are and what you do.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit curae eros lobortis interdum natoque montes nibh, quis nullam feugiat eu metus aptent nam lacus elementum pellentesque placerat id. Nibh senectus habitant parturient dignissim libero suspendisse ut montes, penatibus natoque cum orci semper nascetur euismod himenaeos, nostra a leo luctus ultricies ridiculus mattis. Scelerisque donec ut libero varius consequat ridiculus faucibus, litora vitae molestie elementum dis velit, rhoncus potenti id pulvinar imperdiet eleifend.</p>
             <p>Dignissim litora et auctor facilisi porta ridiculus donec, nisl congue mauris velit phasellus scelerisque semper tristique, eget lobortis fusce placerat tempor nibh. Nullam urna massa cursus per taciti eleifend, nascetur facilisis nostra eu consequat, eros cubilia gravida aenean dictumst. Morbi interdum gravida vulputate orci habitasse est hendrerit phasellus ut ante, convallis aptent vivamus accumsan suscipit platea conubia pharetra blandit justo dapibus, risus neque dis feugiat aliquam non per fermentum tortor.</p>
@@ -97,25 +98,19 @@
             <p>Dignissim litora et auctor facilisi porta ridiculus donec, nisl congue mauris velit phasellus scelerisque semper tristique, eget lobortis fusce placerat tempor nibh. Nullam urna massa cursus per taciti eleifend, nascetur facilisis nostra eu consequat, eros cubilia gravida aenean dictumst. Morbi interdum gravida vulputate orci habitasse est hendrerit phasellus ut ante, convallis aptent vivamus accumsan suscipit platea conubia pharetra blandit justo dapibus, risus neque dis feugiat aliquam non per fermentum tortor.</p>
         </div>
     </div>
-    <script>
-        (function () {
-            const root = document.documentElement;
-            const button = document.getElementById('dev-toggle');
-            const stored = localStorage.getItem('dev-outlines');
 
-            if (stored === 'on') {
-                root.classList.add('dev-on');
-                button.textContent = 'Dev: on';
-            }
+    <div class="nav-divider"></div>
+    <nav class="navbar">
+        <a href="./index.html">Home</a>
+        <a href="./projects.html">Projects</a>
+        <a href="./research.html">Research</a>
+        <a href="./teaching.html">Teaching</a>
+        <a href="./music.html">Music</a>
+        <a href="./about.html">About</a>
+    </nav>
 
-            button.addEventListener('click', () => {
-                const isOn = root.classList.toggle('dev-on');
-                button.textContent = isOn ? 'Dev: on' : 'Dev: off';
-                localStorage.setItem('dev-outlines', isOn ? 'on' : 'off');
-            });
-        })();
-    </script>
-    <script src="assets/js/news.js"></script>
+    <script src="assets/js/dev-toggle.js"></script>
+    <script src="assets/js/list-loader.js"></script>
 </body>
 
 </html>
