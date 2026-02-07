@@ -56,9 +56,23 @@
         
         /* Detect type from container class */
         const isCV = container.classList.contains('cv-list');
-        const itemClass = isCV ? 'cv-item' : 'news-item';
-        const dateClass = isCV ? 'cv-date' : 'news-date';
-        const contentClass = isCV ? 'cv-content' : 'news-content';
+        const isPapers = container.classList.contains('papers-list');
+        
+        let itemClass, dateClass, contentClass;
+        
+        if (isPapers) {
+            itemClass = 'papers-item';
+            dateClass = 'papers-date';
+            contentClass = 'papers-content';
+        } else if (isCV) {
+            itemClass = 'cv-item';
+            dateClass = 'cv-date';
+            contentClass = 'cv-content';
+        } else {
+            itemClass = 'news-item';
+            dateClass = 'news-date';
+            contentClass = 'news-content';
+        }
 
         for (let i = 0; i < maxItems; i += 1) {
             const item = items[i];

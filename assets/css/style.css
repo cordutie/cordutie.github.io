@@ -227,6 +227,43 @@ a:hover { /* Links animation */
     }
 }
 
+/* PAPERS LIST -----------------------------------------------------------------------------------------------------------*/
+.papers-list { /* Container for news items */
+    border-top: 1px solid var(--brick);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.papers-item { /* One news row */
+    display: grid;
+    grid-template-columns: 10% 1fr; /* Date column percentage, content takes rest */
+    gap: 2rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--brick);
+}
+
+.papers-date { /* Left column (date) */
+    font-weight: 600;
+    text-transform: uppercase;
+    /* letter-spacing: 0.03em; */
+    font-size: 1rem;
+}
+
+.papers-content { /* Right column (content) */
+    font-size: 1rem;
+}
+
+.papers-content p { /* Keep two-line feel */
+    margin-bottom: 0rem;
+}
+
+@media (max-width: 960px) {
+    .papers-item {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+}
+
 /* PROJECT CARDS ---------------------------------------------------------------------------------------------------------*/
 .project-grid {
     display: grid;
@@ -247,7 +284,7 @@ a:hover { /* Links animation */
     background-position: center;
     display: flex;
     align-items: flex-end;
-    color: #ffffff; 
+    color: #ffffff;
     /* text-decoration: none; */
     /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); */
     /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
