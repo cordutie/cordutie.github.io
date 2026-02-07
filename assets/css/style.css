@@ -227,6 +227,70 @@ a:hover { /* Links animation */
     }
 }
 
+/* PROJECT CARDS ---------------------------------------------------------------------------------------------------------*/
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.project-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    /* color: var(--brick); */
+    background-color: var(--brick);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    color: #ffffff; 
+    /* text-decoration: none; */
+    /* box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25); */
+    /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+}
+
+/* .project-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.75) 100%);
+} */
+
+.project-card:hover {
+    transform: translateY(-2px);
+    /* box-shadow: 0 16px 34px var(--castanya); */
+}
+
+.project-card-overlay {
+    position: relative;
+    padding: 1rem;
+}
+
+/* .project-card-overlay h3 {
+    margin: 0 0 0.35rem 0;
+    font-size: 1.1rem;
+} */
+
+.project-card-overlay p {
+    font-weight: normal;
+}
+
+@media (max-width: 960px) {
+    .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* BOX ENVIRONMENTS -------------------------------------------------------------------------------------------------------*/
 .box { /* BOX: Responsive container */
     width: 100%;       /* Take full available width */
@@ -305,82 +369,3 @@ a:hover { /* Links animation */
     background-color: var(--pale);
     color: #000000; /* Black text */
 }
-
-/* Blog Card VENV ----------------------------------------------------------------------------------------- */
-.blog-card-compact {
-    max-width: 700px;
-    margin: 1.5rem auto;
-    display: flex; /* Side-by-side layout */
-    border-radius: 8px;
-    background-color: #0a0a0a;
-    border: 1px solid #2a2a2a;
-    overflow: hidden;
-    transition: all 0.2s;
-}
-
-.blog-card-compact:hover {
-    border-color: #4ea8ff;
-    background-color: #111;
-}
-
-.blog-card-compact-image {
-    width: 180px; /* Fixed width on left */
-    height: 180px;
-    object-fit: cover;
-    flex-shrink: 0; /* Don't shrink */
-}
-
-.blog-card-compact-content {
-    padding: 1.5rem;
-    flex: 1; /* Take remaining space */
-    display: flex;
-    flex-direction: column;
-}
-
-.blog-card-compact h2 {
-    font-size: 1.2rem;
-    margin: 0 0 0.5rem 0;
-}
-
-.blog-card-compact-meta {
-    font-size: 0.8rem;
-    color: #777;
-    margin-bottom: 0.8rem;
-}
-
-.blog-card-compact p {
-    font-size: 0.95rem;
-    margin: 0;
-    flex: 1; /* Push tags to bottom */
-}
-
-.blog-card-compact-tags {
-    display: flex;
-    gap: 0.3rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-}
-
-.blog-card-compact-tag {
-    display: inline-block;
-    background-color: #1a1a1a;
-    color: #4ea8ff;
-    padding: 0.25rem 0.6rem;
-    border-radius: 3px;
-    font-size: 0.75rem;
-    border: 1px solid #333;
-}
-
-/* Mobile: Compact becomes stacked */
-@media (max-width: 768px) {
-    .blog-card-compact {
-        flex-direction: column; /* Stack vertically */
-    }
-    
-    .blog-card-compact-image {
-        width: 100%;
-        height: 150px;
-    }
-}
-
-
