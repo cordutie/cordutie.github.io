@@ -91,6 +91,7 @@ a:hover { /* Links animation */
     display: block;
     margin: 0 auto;
     border: 0;
+    margin-bottom: 1rem;
 }
 
 
