@@ -83,6 +83,16 @@ a:hover { /* Links animation */
     margin: 0 auto;
 }
 
+.video-embed { /* Responsive iframe (e.g., YouTube) */
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 0;
+}
+
 
 /* TEXT WRAP IMAGE (floated image style) */
 .img-wrap { /* Image that text wraps around */
