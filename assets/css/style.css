@@ -45,6 +45,15 @@ p { /* Paragraph env */
     margin-bottom: 1rem; /* Space between paragraphs */
 }
 
+ul, ol { /* Native lists */
+    margin-bottom: 1rem;
+    padding-left: 1.25rem; /* Restore default indent */
+}
+
+li { /* List items */
+    margin-bottom: 0.35rem;
+}
+
 a { /* Links */
     color: inherit; /* Use parent text color */
     text-decoration: none; /* No underline by default */
@@ -416,4 +425,26 @@ a:hover { /* Links animation */
 .section-pale {
     background-color: var(--pale);
     color: #000000; /* Black text */
+}
+
+/* BUTTON STYLES ----------------------------------------------------------------------------------------------------*/
+.button { /* Minimal sleek button */
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    background-color: transparent;
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.button:active {
+    background-color: rgba(0, 0, 0, 0.12);
 }
