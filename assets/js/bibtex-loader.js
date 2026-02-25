@@ -22,12 +22,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 box.addEventListener('click', function() {
                     navigator.clipboard.writeText(bibtexText.trim())
                         .then(() => {
-                            // Visual feedback
-                            const originalBg = box.style.backgroundColor;
-                            box.style.backgroundColor = '#90b890';
+                            // Show "Copied to clipboard" message
+                            const message = document.createElement('div');
+                            message.textContent = 'Copied to clipboard';
+                            message.style.cssText = `
+                                position: absolute;
+                                top: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background-color: rgba(0, 0, 0, 0.8);
+                                color: white;
+                                padding: 0.5rem 1rem;
+                                border-radius: 4px;
+                                font-size: 0.9rem;
+                                pointer-events: none;
+                                z-index: 1000;
+                            `;
+                            box.style.position = 'relative';
+                            box.appendChild(message);
+                            
                             setTimeout(() => {
-                                box.style.backgroundColor = originalBg;
-                            }, 300);
+                                message.remove();
+                            }, 1500);
                         })
                         .catch(err => {
                             console.error('Failed to copy to clipboard:', err);
