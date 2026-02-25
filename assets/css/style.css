@@ -448,3 +448,30 @@ a:hover { /* Links animation */
 .button:active {
     background-color: rgba(0, 0, 0, 0.12);
 }
+
+/* BIBTEX BOX ----------------------------------------------------------------------------------------------------*/
+.bibtex-box {
+    background-color: var(--brick);
+    max-width: 720px;
+    overflow-x: auto;
+    padding: 1em;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    position: relative;
+}
+
+.bibtex-box:hover {
+    background-color: #c78d8a;
+}
+
+.bibtex-box:active {
+    background-color: #aa7572;
+}
+
+.bibtex-box pre {
+    color: var(--lino);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
