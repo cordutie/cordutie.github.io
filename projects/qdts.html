@@ -84,14 +84,14 @@
             <h2><code>qdts.solver</code>: A numerical optimization approach</h2>
             <p>The first practical solver for larger QDTS was introduced by Gutiérrez et al. (2023). The method formulates synthesis as a nonlinear optimization problem and solves it using a custom Newton-Raphson algorithm, allowing highly accurate synthesis of spectra containing up to sixteen harmonics. This work received the <em>Best Paper Award</em> at the International Computer Music Conference and was later expanded into a full journal article (Gutiérrez et al., 2024).</p>
             <p>This solver is both fast and highly accurate. However, because the optimization landscape contains many valid solutions, small changes in the synthesis parameters can produce perceptually different outputs. For this reason, it is best suited for applications where the target timbre remains relatively stationary rather than changing continuously in real time.</p>
-            <div class="box" style="max-width: 720px; width: 100%; aspect-ratio:11 / 5;">
+            <div class="box yt-playlist-box" style="max-width: 720px; width: 100%;">
                 <div data-playlist-id="PLTk_Hl5v7kDWQq3st7XoRE3aT8NWRsxKr"></div>
             </div>
 
             <h2><code>qdts.solver_nn</code>: A neural-network approach</h2>
             <p>To overcome the limitations of numerical optimization, Gutiérrez et al. (2026) proposed a neural-network-based synthesizer that directly learns the mapping between desired QDTS parameters and the required physical tones. The learned model produces solutions that vary much more smoothly as synthesis parameters change, making the system considerably easier to control interactively.</p>
             <p>Although the neural approach can be slightly less accurate than the optimization-based solver for some target spectra, its improved continuity and parameter consistency make it the preferred choice for real-time sound synthesis and dynamic musical applications.</p>
-            <div class="box" style="max-width: 720px; width: 100%; aspect-ratio:11 / 5;">
+            <div class="box yt-playlist-box" style="max-width: 720px; width: 100%;">
                 <div data-playlist-id="PLA91KWhok4nE"></div>
             </div>
 
@@ -100,6 +100,7 @@
                 <li>Gutiérrez, E., Haki, B., Haworth, C., Serra, X., & Cádiz, R. F. (2026). <em>Learned continuous synthesis of quadratic difference tone spectra.</em> In <em>Proceedings of the 7th Conference on AI Music Creativity (AIMC 2026)</em>, Berlin, Germany, September 16–18.</li>
                 <li>Gutiérrez, E., Haworth, C., & Cádiz, R. F. (2024). Generating sonic phantoms with quadratic difference tone spectrum synthesis. <em>Computer Music Journal, 47</em>(3), 19–34. https://doi.org/10.1162/COMJ_a_00687</li>
                 <li>Gutiérrez, E., Haworth, C., & Cádiz, R. F. (2023). <em>Generating quadratic difference tone spectra for auditory distortion synthesis.</em> In <em>Proceedings of the International Computer Music Conference</em> (pp. 237–243).</li>
+                <li>Kendall, G., Haworth, C., and Cádiz, R. F. (2014). Sound synthesis with auditory distortion products. Computer Music Journal, 38(4):5–23.</li>
                 <li>Haworth, C. (2011). Composing with absent sound. In Proceedings of the International Computer Music Confer-ence 2011, pages 342–345, University of Huddersfield, UK.</li>
             </ul>
 
@@ -122,7 +123,9 @@
                 <h2>Download</h2>
                 <p><code>qdts</code> is available for free on GitHub. You can download the latest release from the link below.</p>
                 <div style="text-align: center; margin: 1rem;"><a href="https://github.com/cordutie/qdts/releases/tag/qdts-v0.3" class="button" target="_blank"><code>qdts</code> Max package v0.3</a></div>
-                
+            
+            <div class="nav-divider" style="background-color: black; margin-top: 2.5rem; margin-bottom: 2rem;"></div>
+            
             <h1 id="qdts_sc">SuperCollider Extension</h1>
                 SuperCollider implementations made by <a href="https://www.marcinpietruszewski.com/" target="_blank">Marcin Pietruszewski</a> for both <code>qdts.solver</code> and <code>qdts.solver_nn</code> are also available. Check his GitHub repository below for installation instructions.
                 <div style="text-align: center; margin: 1rem;">
