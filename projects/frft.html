@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban G. | FRFT</title>
+    <title>Esteban G. | qdts</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/yt-playlist.css">
     <link rel="icon" type="image/png" href="../assets/img/others/favicon1.png">
+    <script src="../assets/js/mathjax-config.js"></script>
 </head>
 
 <body style="background-color: var(--castanya);">
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <button class="dev-toggle" id="dev-toggle" type="button">Dev: off</button>
     <nav class="navbar">
         <a href="../index.html">Home</a>
@@ -20,18 +23,104 @@
     </nav>
     <div class="nav-divider"></div>
 
+    <!-- MAIN SECTION ----------------------------------------------------------------------->
     <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
-            <h1 style="text-align: center;">FRFT</h1>
-            <p style="text-align: center;">🚧 Under construction</p>
+            <h1 style="text-align: center;">Fractional Fourier Transform Synthesis</h1>
+
+            <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                <a href="#" class="button button-brick">(JAES26) Paper</a>
+                <a href="#" target="_blank" class="button button-brick">(ICMC25) Paper</a>
+                <a href="https://www.youtube.com/playlist?list=PLUIndkF5J244" target="_blank" class="button button-brick">(JAES26) Examples</a>
+                <a href="https://www.youtube.com/playlist?list=PLTk_Hl5v7kDUKD-d_sTh_dI-0tY0hVJX5" target="_blank" class="button button-brick">(ICMC23) Examples</a>
+                <a href="#frft_max" class="button button-brick">Max</a>
+                <a href="https://github.com/behzadhaki/FRFT_Max" target="_blank" class="button button-brick">Source Code</a>
+            </div>
+
+            <div class="box" style="max-width: 480px; padding: 1rem;">
+                <img src="/assets/projects/qdts/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="frft_main" />
+            </div>
+            <div class="box" style="max-width: 720px; padding: 1rem;">
+            <p style="text-align: center;">Description here</p>
+            </div>
         </div>
     </div>
 
+    <!-- FEATURED ----------------------------------------------------------->
+    <div class="section section-brick section-vcentered">
+        <div class="box">
+            <h1>Featured</h1>
+            <p>To be filled.</p>
+        </div>
+    </div>
+
+    <!-- DESCRIPTION SECTION --------------------------------------------------------------------->
+    <div class="section section-lino section-vcentered">
+        <div class="box">
+
+            <h1>What even is the Fractional Fourier Transform?</h1>
+            <p>To be filled.</p>
+            
+            <div class="box" style="max-width: 480px; padding: 1rem;">
+                <img src="/assets/projects/qdts/frft_model.svg" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="frft_model" />
+                <p style="text-align: centers; margin-top: 1rem;"><b>Figure 1.</b> To be filled.</p>
+            </div>
+
+            <h1>Fractional Fourier Transform Synthesis</h1>
+            <p>To be filled.</p>
+
+            <div class="box" style="max-width: 480px; padding: 1rem;">
+                <img src="/assets/projects/qdts/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="frft_main" />
+                <p><b>Figure 2.</b> To be filled.</p>
+            </div>
+
+            <div class="box" style="max-width: 720px; width: 100%; aspect-ratio:11 / 5;">
+                <div data-playlist-id="PLUIndkF5J244"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DOWNLOAD --------------------------------------------------->
+    <div class="section section-pale section-vcentered">
+        <div class="box">
+            <h1 id="qdts_max">Max Package</h1>
+                <h2>Requirements</h2>
+                <ul>
+                    <li>Max 8 or higher</li>
+                    <li>macOS (arm64) or Windows (x64)</li>
+                </ul>
+
+                <h2>How to install</h2>
+                <p>In macOS there is a one-liner that once run in the terminal will install all automatically. On Windows, simply download the latest release from the link below, unzip the file, and move the resulting folder to your Max packages directory (typically <code>\Documents\Max 8\Packages</code>). See more details in the download link.</p>
+                
+                <h2>Download</h2>
+                <p><code>frft</code> is available for free on GitHub. You can download the latest release from the link below.</p>
+                <div style="text-align: center; margin: 1rem;"><a href="https://github.com/behzadhaki/FRFT_Max/releases/tag/v1.0" class="button" target="_blank"><code>qdts</code> Max package v0.3</a></div>
+        </div>
+    </div>
+
+    <!-- Acknowledgements --------------------------------------------------->
+    <div class="section section-castanya section-vcentered">
+        <div class="box">
+            <h1>Acknowledgement</h1>
+            <p>If you use <code>qdts</code>, please cite it as (click to copy to clipboard):</p>
+            <div style="margin-bottom: 1rem;" class="box bibtex-box" data-bibtex-src="../assets/projects/qdts/projects_nqdts_bibtex.txt"></div>
+            <div class="box bibtex-box" data-bibtex-src="../assets/projects/qdts/projects_qdts_bibtex.txt"></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <div class="nav-divider"></div>
     <nav class="navbar">
-        <a href="../index.html">Home</a>
+        <a href="./index.html">Home</a>
     </nav>
+
+    <!-- SCRIPTS -------------------------------------------------------->
+    <script>window.YT_API_KEY = 'AIzaSyDZf4pAT-1c5pDIoUvUFnFMoor3dAGW9zk';</script>
     <script src="../assets/js/dev-toggle.js"></script>
+    <script src="../assets/js/list-loader.js"></script>
+    <script src="../assets/js/bibtex-loader.js"></script>
+    <script src="../assets/js/yt-playlist.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,8 @@
+@inproceedings{aimc26_qdts,
+  author    = {Gutiérrez, Esteban and Haki, Behzad and Haworth, Christopher and Serra, Xavier and Cádiz, Rodrigo F.},
+  title     = {Learned Continuous Synthesis of Quadratic Difference Tone Spectra},
+  booktitle = {Proceedings of the 7th Conference on AI Music Creativity (AIMC 2026)},
+  address   = {Berlin, Germany},
+  month     = sep,
+  year      = {2026},
+}

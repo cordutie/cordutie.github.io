@@ -449,6 +449,26 @@ a:hover { /* Links animation */
     background-color: rgba(0, 0, 0, 0.12);
 }
 
+.button-castanya {
+    background-color: var(--castanya);
+    color: var(--white);
+    border-color: var(--castanya);
+}
+
+.button-castanya:hover {
+    background-color: #9c3b3e;
+}
+
+.button-brick {
+    background-color: var(--brick);
+    color: var(--white);
+    border-color: var(--brick);
+}
+
+.button-brick:hover {
+    background-color: #a8726f;
+}
+
 /* BIBTEX BOX ----------------------------------------------------------------------------------------------------*/
 .bibtex-box {
     background-color: var(--brick);

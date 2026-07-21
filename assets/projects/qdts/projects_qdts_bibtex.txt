@@ -1,4 +1,4 @@
-@article{qdts,
+@article{cmj24_qdts,
 author = {Gutiérrez, Esteban and Haworth, Christopher and Cádiz, Rodrigo F.},
 title = {Generating Sonic Phantoms with Quadratic Difference Tone Spectrum Synthesis},
 journal = {Computer Music Journal},

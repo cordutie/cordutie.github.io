@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esteban G. | qdts</title>
     <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/yt-playlist.css">
     <link rel="icon" type="image/png" href="../assets/img/others/favicon1.png">
+    <script src="../assets/js/mathjax-config.js"></script>
 </head>
 
 <body style="background-color: var(--castanya);">
@@ -25,11 +27,24 @@
     <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
             <h1 style="text-align: center;"><code>qdts</code></h1>
+
+            <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                <a href="#" target="_blank" class="button button-brick">(AIMC26) Paper</a>
+                <a href="https://pure-oai.bham.ac.uk/ws/portalfiles/portal/239099418/cmj.pdf" target="_blank" class="button button-brick">(CMJ24) Paper</a>
+                <a href="https://www.fulcrum.org/epubs/0c483n30f?locale=en#page=241" target="_blank" class="button button-brick">(ICMC23) Paper</a>
+                <a href="https://www.youtube.com/playlist?list=PLA91KWhok4nE" target="_blank" class="button button-brick">(AIMC26) Examples</a>
+                <a href="https://www.youtube.com/playlist?list=PLTk_Hl5v7kDWQq3st7XoRE3aT8NWRsxKr" target="_blank" class="button button-brick">(CMJ24 & ICMC23) Examples</a>
+                <a href="#qdts_max" class="button button-brick">Max</a>
+                <a href="#qdts_sc"  class="button button-brick">SuperCollider</a>
+                <a href="https://github.com/cordutie/QDTS" target="_blank" class="button button-brick">Source Code</a>
+            </div>
+
             <div class="box" style="max-width: 480px; padding: 1rem;">
-                <img src="/assets/img/projects/qdts/qdts.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="qdts" />
+                <img src="/assets/projects/qdts/qdts_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="qdts_max" />
             </div>
             <div class="box" style="max-width: 720px; padding: 1rem;">
             <p style="text-align: center;"><code>qdts</code> is a package for Max that, through mathematical methods and neural networks, generates Quadratic Difference Tone Spectra with controllable timbral characteristics. In doing so, it enables the creation of rich “absent” sounds—perceptual phenomena that are heard despite not being physically present in the acoustic signal—emerging from a complex of pure tones.</p>
+            <p style="text-align: center;">Quadratic Difference Tone Spectra have been an area of intense research and exploration. This webpage condenses different approaches and implementations made throughout the years.</p>
             </div>
         </div>
     </div>
@@ -46,28 +61,74 @@
     <!-- DESCRIPTION SECTION --------------------------------------------------------------------->
     <div class="section section-lino section-vcentered">
         <div class="box">
+
             <h1>What even is a Quadratic Difference Tone Spectrum?</h1>
-            <p>Under certain circumstances, when two pure notes are played, a third one can be heard eventhough it doesn't exist. This "ghost note" is a psychoacoustic trick called an Auditory Distortion Product (ADP). Depending on how these frequencies interact, they are classified as Quadratic or Cubic Difference Tones (QDT and CDT), and over the past decades, scientists have studied them in detail.</p>
-            <p>While a single difference tone is a curiosity, a Quadratic Difference Tone Spectrum (QDTS) is a completely synthetic anomaly. Instead of synthesising one ghost tone out of a pair of other pure tones, a complex of pure tones is used to generate an entire series of illusory tones. This creates a rich and perceivable complex harmonic spectrum, even though it exists entirely inside your head.</p>
-            <p>The main caveat of QDTS is that the acoustic tones needed to generate a full spectrum of absent tones are not ordered in a harmonically logical way, which makes them challenging to use in musical practice.</p>
+            <p>Under certain conditions, when two pure tones are played simultaneously, listeners may perceive a third tone even though no physical sound exists at that frequency. This auditory illusion is known as an <strong>Auditory Distortion Product (ADP)</strong>. Depending on the interaction between the original frequencies, these perceived tones are classified as <strong>Quadratic Difference Tones (QDTs)</strong> or <strong>Cubic Difference Tones (CDTs)</strong>, both of which have been studied extensively in psychoacoustics.</p>
+            <p>While a single difference tone is already an intriguing perceptual phenomenon, a <strong>Quadratic Difference Tone Spectrum (QDTS)</strong> takes the idea much further. Instead of using one pair of tones to generate a single illusory pitch, a carefully designed complex of pure tones is used to evoke an entire harmonic spectrum of difference tones. The remarkable result is the perception of a rich harmonic sound that exists almost entirely inside the listener's auditory system.</p>
+            <p>The main challenge of QDTS synthesis is that the physical tones required to generate the desired illusory spectrum are not themselves harmonically organized. As a consequence, designing sounds that produce a specific perceived timbre is a difficult nonlinear optimization problem, making QDTS synthesis challenging for musical applications.</p>
+            
+            <div class="box" style="max-width: 480px; padding: 1rem;">
+                <img src="/assets/projects/qdts/qdts_model.svg" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="qdts_model" />
+                <p style="text-align: centers; margin-top: 1rem;"><b>Figure 1. Illustrative frequency-amplitude representation of the QDTS model.</b> On the right, the distribution of amplitudes of the carrier complex of pure tones is shown in cyan. On the left, the distribution of amplitudes of the target complex, evoked as a distortion product by the carrier, is shown dashed and in orange. The distortion function $D$, that maps the acoustic signal to the evoked distortion product, is added to illustrate how these signals are connected.</p>
+            </div>
+
+            <h1>Synthesis of Quadratic Difference Tone Spectra</h1>
+            <p>The first practical framework for synthesizing QDTS was proposed by Haworth et al. (2011) and was later formalized by Kendall et al. (2014). In their work, the authors introduced the mathematical model relating physical tones to their perceived difference-tone spectrum. Their method demonstrated the concept, but practical solutions were limited to relatively small spectra (up to four harmonics).</p>
+            <p>The <code>qdts</code> package extends this work by providing two complementary synthesis algorithms capable of generating QDTS containing up to sixteen harmonics. Each method offers different trade-offs between accuracy, consistency, and real-time controllability.</p>
+
+            <div class="box" style="max-width: 480px; padding: 1rem;">
+                <img src="/assets/projects/qdts/qdts_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="qdts_max" />
+                <p><b>Figure 2. <code>qdts</code> package.</b> Max patcher using <code>qdts.solver_nn</code> to synthesize QDTS in real-time.</p>
+            </div>
+
+            <h2><code>qdts.solver</code>: A numerical optimization approach</h2>
+            <p>The first practical solver for larger QDTS was introduced by Gutiérrez et al. (2023). The method formulates synthesis as a nonlinear optimization problem and solves it using a custom Newton-Raphson algorithm, allowing highly accurate synthesis of spectra containing up to sixteen harmonics. This work received the <em>Best Paper Award</em> at the International Computer Music Conference and was later expanded into a full journal article (Gutiérrez et al., 2024).</p>
+            <p>This solver is both fast and highly accurate. However, because the optimization landscape contains many valid solutions, small changes in the synthesis parameters can produce perceptually different outputs. For this reason, it is best suited for applications where the target timbre remains relatively stationary rather than changing continuously in real time.</p>
+            <div class="box" style="max-width: 720px; width: 100%; aspect-ratio:11 / 5;">
+                <div data-playlist-id="PLTk_Hl5v7kDWQq3st7XoRE3aT8NWRsxKr"></div>
+            </div>
+
+            <h2><code>qdts.solver_nn</code>: A neural-network approach</h2>
+            <p>To overcome the limitations of numerical optimization, Gutiérrez et al. (2026) proposed a neural-network-based synthesizer that directly learns the mapping between desired QDTS parameters and the required physical tones. The learned model produces solutions that vary much more smoothly as synthesis parameters change, making the system considerably easier to control interactively.</p>
+            <p>Although the neural approach can be slightly less accurate than the optimization-based solver for some target spectra, its improved continuity and parameter consistency make it the preferred choice for real-time sound synthesis and dynamic musical applications.</p>
+            <div class="box" style="max-width: 720px; width: 100%; aspect-ratio:11 / 5;">
+                <div data-playlist-id="PLA91KWhok4nE"></div>
+            </div>
+
+            <h2>References</h2>
+            <ul>
+                <li>Gutiérrez, E., Haki, B., Haworth, C., Serra, X., & Cádiz, R. F. (2026). <em>Learned continuous synthesis of quadratic difference tone spectra.</em> In <em>Proceedings of the 7th Conference on AI Music Creativity (AIMC 2026)</em>, Berlin, Germany, September 16–18.</li>
+                <li>Gutiérrez, E., Haworth, C., & Cádiz, R. F. (2024). Generating sonic phantoms with quadratic difference tone spectrum synthesis. <em>Computer Music Journal, 47</em>(3), 19–34. https://doi.org/10.1162/COMJ_a_00687</li>
+                <li>Gutiérrez, E., Haworth, C., & Cádiz, R. F. (2023). <em>Generating quadratic difference tone spectra for auditory distortion synthesis.</em> In <em>Proceedings of the International Computer Music Conference</em> (pp. 237–243).</li>
+                <li>Haworth, C. (2011). Composing with absent sound. In Proceedings of the International Computer Music Confer-ence 2011, pages 342–345, University of Huddersfield, UK.</li>
+            </ul>
+
         </div>
     </div>
 
-    <!-- TUTORIAL + DOWNLOAD --------------------------------------------------->
+    <!-- DOWNLOAD --------------------------------------------------->
     <div class="section section-pale section-vcentered">
         <div class="box">
-            <h1>Requirements</h1>
-            <ul>
-                <li>Max 8 or higher</li>
-                <li>Windows (x64) or macOS (arm64)</li>
-            </ul>
+            <h1 id="qdts_max">Max Package</h1>
+                <h2>Requirements</h2>
+                <ul>
+                    <li>Max 8 or higher</li>
+                    <li>macOS (arm64) or Windows (x64)</li>
+                </ul>
 
-            <h1>How to install</h1>
-            <p>To install <code>qdts</code> simply download the latest release from the link below, unzip the file, and move the resulting folder to your Max packages directory (typically <code>/Documents/Max 8/Packages</code> on macOS or <code>\Documents\Max 8\Packages</code> on Windows).</p>
-            
-            <h1>Download</h1>
-            <p><code>qdts</code> is available for free on GitHub. You can download the latest release from the link below.</p>
-            <div style="text-align: center; margin: 1rem;"><a href="https://github.com/cordutie/qdts/releases/tag/qdts-v0.1" class="button" target="_blank">Download qdts v0.1</a></div>
+                <h2>How to install</h2>
+                <p>In macOS there is a one-liner that once run in the terminal will install all automatically. On Windows, simply download the latest release from the link below, unzip the file, and move the resulting folder to your Max packages directory (typically <code>\Documents\Max 8\Packages</code>). See more details in the download link.</p>
+                
+                <h2>Download</h2>
+                <p><code>qdts</code> is available for free on GitHub. You can download the latest release from the link below.</p>
+                <div style="text-align: center; margin: 1rem;"><a href="https://github.com/cordutie/qdts/releases/tag/qdts-v0.3" class="button" target="_blank"><code>qdts</code> Max package v0.3</a></div>
+                
+            <h1 id="qdts_sc">SuperCollider Extension</h1>
+                SuperCollider implementations made by <a href="https://www.marcinpietruszewski.com/" target="_blank">Marcin Pietruszewski</a> for both <code>qdts.solver</code> and <code>qdts.solver_nn</code> are also available. Check his GitHub repository below for installation instructions.
+                <div style="text-align: center; margin: 1rem;">
+                    <a href="https://github.com/marcinpiet/qdts" class="button" target="_blank"><code>qdts.solver</code> in SuperCollider</a>
+                    <a href="https://github.com/mpietrus00/sc-qdts" class="button" target="_blank"><code>qdts.solver_nn</code> in SuperCollider</a>
+                </div>
         </div>
     </div>
 
@@ -76,6 +137,7 @@
         <div class="box">
             <h1>Acknowledgement</h1>
             <p>If you use <code>qdts</code>, please cite it as (click to copy to clipboard):</p>
+            <div style="margin-bottom: 1rem;" class="box bibtex-box" data-bibtex-src="../assets/projects/qdts/projects_nqdts_bibtex.txt"></div>
             <div class="box bibtex-box" data-bibtex-src="../assets/projects/qdts/projects_qdts_bibtex.txt"></div>
         </div>
     </div>
@@ -87,9 +149,11 @@
     </nav>
 
     <!-- SCRIPTS -------------------------------------------------------->
+    <script>window.YT_API_KEY = 'AIzaSyDZf4pAT-1c5pDIoUvUFnFMoor3dAGW9zk';</script>
     <script src="../assets/js/dev-toggle.js"></script>
     <script src="../assets/js/list-loader.js"></script>
     <script src="../assets/js/bibtex-loader.js"></script>
+    <script src="../assets/js/yt-playlist.js"></script>
 </body>
 
 </html>
