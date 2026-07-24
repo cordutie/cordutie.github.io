@@ -1,0 +1,8 @@
+@inproceedings{Gutierrez2025FRFT,
+  author    = {Guti\'{e}rz, Esteban and C\'{a}diz, Rodrigo F. and Sing Long, Carlos A. and Font, Frederic and Serra, Xavier},
+  title     = {Fractional {Fourier} Transform Sound Synthesis},
+  booktitle = {Proceedings of the International Computer Music Conference (ICMC)},
+  address   = {Boston, USA},
+  month     = {Jun.},
+  year      = {2025},
+}

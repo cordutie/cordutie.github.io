@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban G. | qdts</title>
+    <title>Esteban G. | frft</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/yt-playlist.css">
     <link rel="icon" type="image/png" href="../assets/img/others/favicon1.png">
@@ -26,31 +26,43 @@
     <!-- MAIN SECTION ----------------------------------------------------------------------->
     <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
-            <h1 style="text-align: center;">Fractional Fourier Transform Synthesis</h1>
+            <h1 style="text-align: center;"><code>frft</code></h1>
 
             <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
-                <a href="#" class="button button-brick">(JAES26) Paper</a>
+                <a href="#" target="_blank" class="button button-brick">(JAES26) Paper</a>
                 <a href="#" target="_blank" class="button button-brick">(ICMC25) Paper</a>
                 <a href="https://www.youtube.com/playlist?list=PLUIndkF5J244" target="_blank" class="button button-brick">(JAES26) Examples</a>
-                <a href="https://www.youtube.com/playlist?list=PLTk_Hl5v7kDUKD-d_sTh_dI-0tY0hVJX5" target="_blank" class="button button-brick">(ICMC23) Examples</a>
+                <a href="https://www.youtube.com/playlist?list=PLTk_Hl5v7kDUKD-d_sTh_dI-0tY0hVJX5" target="_blank" class="button button-brick">(ICMC25) Examples</a>
                 <a href="#frft_max" class="button button-brick">Max</a>
                 <a href="https://github.com/behzadhaki/FRFT_Max" target="_blank" class="button button-brick">Source Code</a>
             </div>
 
-            <div class="box" style="max-width: 480px; padding: 1rem;">
-                <img src="/assets/projects/qdts/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="frft_main" />
+            <div class="box" style="max-width: 960px; padding: 1rem;">
+                <img src="/assets/projects/frft/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="frft_main" />
             </div>
             <div class="box" style="max-width: 720px; padding: 1rem;">
-            <p style="text-align: center;">Description here</p>
+            <p style="text-align: center;"><code>frft</code> is a package for Max that enables real-time sound synthesis and processing using the Fractional Fourier Transform (FRFT). By interpreting the FRFT as a rotation in the time–frequency plane, it allows direct exploration of intermediate representations between time and frequency, producing novel timbral structures, dynamic frequency modulations, and hybrid behaviors unattainable with conventional Fourier-based methods.</p>
+            <p style="text-align: center;">This webpage summarizes our research, presents the techniques we developed, and makes our findings freely available to anyone interested in exploring the FRFT for sound.</p>
             </div>
         </div>
     </div>
 
-    <!-- FEATURED ----------------------------------------------------------->
+    <!-- EXTERNAL RESOURCES ----------------------------------------------------------->
     <div class="section section-brick section-vcentered">
         <div class="box">
-            <h1>Featured</h1>
-            <p>To be filled.</p>
+            <h1>Background and Tutorials</h1>
+            <p>Although this webpage includes basic intuitions for the Fractional Fourier Transform, for more accurate mathematical definitions and properties we recommend reading our papers <a href="#" target="_blank">"Fractional Fourier Sound Synthesis"</a> (ICMC 2025) and <a href="#" target="_blank">"Real-Time Fractional Fourier Sound Synthesis and Processing"</a> (JAES 2026). Supplementary material with sound examples, spectrograms, and detailed descriptions for each paper is available at <a href="https://cordutie.github.io/frft_sound_synthesis/" target="_blank">cordutie.github.io/frft_sound_synthesis</a> and <a href="https://cordutie.github.io/rt_frft/" target="_blank">cordutie.github.io/rt_frft</a> respectively.</p>
+
+            <p>For a comprehensive and interactive introduction to the Fractional Fourier Transform applied to sound, including web demos and implementation details in Max, we refer to the following tutorial by <a href="https://behzadhaki.com/" target="_blank">Behzad Haki</a>:</p>
+            <a href="https://behzadhaki.com/works/max/frft/" target="_blank" style="text-decoration: none; color: inherit;">
+                <div style="display: flex; align-items: center; gap: 1.5rem; max-width: 560px; margin: 1.5rem auto 0; padding: 0.75rem 1.25rem; border-radius: 12px; background: rgba(0,0,0,0.06); transition: background 0.2s;" onmouseover="this.style.background='rgba(0,0,0,0.12)'" onmouseout="this.style.background='rgba(0,0,0,0.06)'">
+                    <img src="/assets/projects/frft/frft_ableton.gif" style="width: 280px; height: auto; border-radius: 8px; flex-shrink: 0;" alt="frft tutorial" />
+                    <div>
+                        <div style="font-size: 1.3rem; font-weight: bold; margin-bottom: 0.3rem;">FRFT Tutorial</div>
+                        <p style="margin: 0; font-size: 0.95rem; opacity: 0.8;">Introduction to the theory, real-time implementation in Max, and all synthesis methods with interactive demos.</p>
+                    </div>
+                </div>
+            </a>
         </div>
     </div>
 
@@ -59,31 +71,45 @@
         <div class="box">
 
             <h1>What even is the Fractional Fourier Transform?</h1>
-            <p>To be filled.</p>
+            <p>The classical Fourier Transform (FT) maps a signal from the time domain to the frequency domain. If one thinks of time and frequency as coordinates on a common plane, the FT can be regarded as a rotation by $\pi/2$ radians. Applying the FT a second time yields a reflected version of the input (the frequency domain maps back to reversed time), a third application maps inverted time to inverted frequency, and a fourth returns to the original time domain. Sequential applications of the FT therefore correspond to rotations by multiples of $\pi/2$ in the time–frequency plane.</p>
+            <p>The <strong>Fractional Fourier Transform (FRFT)</strong> generalizes this idea by introducing a continuous order parameter $\alpha \in \mathbb{R}$ that interpolates between time and frequency representations. The FRFT of order $\alpha$ corresponds to a rotation by $\alpha\pi/2$ radians, giving rise to what we call the <strong>$\alpha$-domain</strong>—an intermediate representation that blends characteristics of both time and frequency.</p>
+            <p>A key challenge for sonic applications is that signals in the $\alpha$-domain are generally complex-valued. To address this, we introduce the <strong>Real Fractional Fourier Transform (RFRFT)</strong>, which extracts the real part of the FRFT. The RFRFT preserves linearity and introduces a <em>double rotation</em> property: for real signals, taking the real part reduces the intensity of the original rotation while adding an equally significant rotation in the opposite direction. This double rotation is the source of many of the distinctive sonic behaviors observed throughout our work.</p>
             
-            <div class="box" style="max-width: 480px; padding: 1rem;">
-                <img src="/assets/projects/qdts/frft_model.svg" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="frft_model" />
-                <p style="text-align: centers; margin-top: 1rem;"><b>Figure 1.</b> To be filled.</p>
+            <div class="box" style="max-width: 720px; padding: 1rem;">
+                <img src="/assets/projects/frft/frft_vs_rfrt.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 720px); height: auto;" alt="frft_model" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 600px; margin-left: auto; margin-right: auto;"><b>Figure 1.</b> From left to right, spectrograms of a sinusoid at 11,025 Hz, its FRFT, and its RFRFT, both of order $\alpha = 0.25$. Frequency axis is measured in kHz while time axis in seconds. While the FRFT rotates the signal in the time–frequency plane, the RFRFT introduces a second rotation in the opposite direction.</p>
             </div>
 
-            <h1>Fractional Fourier Transform Synthesis</h1>
-            <p>To be filled.</p>
+            <h1>Fractional Fourier Transform Synthesis and Processing</h1>
+            <p>By interpreting the FRFT as a rotation in the time–frequency plane, we introduce several techniques for real-time sound synthesis and processing in the α-domain. Each method exploits different aspects of the FRFT's geometric and algebraic properties to produce sonic behaviors that are fundamentally different from their conventional Fourier-based counterparts.</p>
 
-            <div class="box" style="max-width: 480px; padding: 1rem;">
-                <img src="/assets/projects/qdts/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 480px); height: auto;" alt="frft_main" />
-                <p><b>Figure 2.</b> To be filled.</p>
+            <div class="box" style="max-width: 720px; padding: 1rem;">
+                <img src="/assets/projects/frft/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 720px); height: auto;" alt="frft_vs_rfrft" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;"><b>Figure 2. <code>frft</code> package.</b> Max patcher using the <code>frft~</code> external for real-time FRFT-based sound synthesis and processing.</p>
             </div>
+
+            <h2>Methods</h2>
+            <p><strong>α-synthesis and α-processing</strong> apply the RFRFT frame-by-frame with overlap-and-add reconstruction. For harmonic signals, the double rotation property transforms each partial into a pair of chirp-like components, yielding dynamically evolving textures. The order α controls the rotation strength, the window length shapes the chirp slope, and the hop size can introduce emergent rhythmic patterns.</p>
+            <p><strong>α-convolution and α-filters</strong> extend the classical convolution theorem to the α-domain: two signals are multiplied in the α-domain and transformed back to time. Since each α-domain subband corresponds to a chirp spanning a range of frequencies, filtering in this domain produces perceptually rich timbral colorations—from metallic distortion with short windows to rhythmic amplitude modulation with longer ones.</p>
+            <p><strong>α-ring modulation</strong> multiplies the FRFTs of two signals and extracts the real part. The FRFT of a sinusoid is a complex chirp, so multiplying two such chirps yields a new chirp whose instantaneous frequency is the sum of the originals—a form of frequency modulation where the modulator is itself a chirp. Oppositely directed chirps produce interference patterns heard as rhythmic structures.</p>
 
             <div class="box yt-playlist-box" style="max-width: 720px; width: 100%;">
                 <div data-playlist-id="PLUIndkF5J244"></div>
             </div>
+
+            <h2>References</h2>
+            <ul>
+                <li>Gutiérrez, E., Haki, B., Sing Long, C., Font, F., Serra, X., & Cádiz, R. F. (2026). <em>Real-time fractional Fourier sound synthesis and processing.</em> <em>Journal of the Audio Engineering Society</em>.</li>
+                <li>Gutiérrez, E., Cádiz, R. F., Sing Long, C. A., Font, F., & Serra, X. (2025). <em>Fractional Fourier Transform sound synthesis.</em> In <em>Proceedings of the International Computer Music Conference</em>, Boston, USA.</li>
+            </ul>
+
         </div>
     </div>
 
     <!-- DOWNLOAD --------------------------------------------------->
     <div class="section section-pale section-vcentered">
         <div class="box">
-            <h1 id="qdts_max">Max Package</h1>
+            <h1 id="frft_max">Max Package</h1>
                 <h2>Requirements</h2>
                 <ul>
                     <li>Max 8 or higher</li>
@@ -95,7 +121,7 @@
                 
                 <h2>Download</h2>
                 <p><code>frft</code> is available for free on GitHub. You can download the latest release from the link below.</p>
-                <div style="text-align: center; margin: 1rem;"><a href="https://github.com/behzadhaki/FRFT_Max/releases/tag/v1.0" class="button" target="_blank"><code>qdts</code> Max package v0.3</a></div>
+                <div style="text-align: center; margin: 1rem;"><a href="https://github.com/behzadhaki/FRFT_Max/releases/tag/v1.0" class="button" target="_blank"><code>frft</code> Max package v1.0</a></div>
         </div>
     </div>
 
@@ -103,9 +129,9 @@
     <div class="section section-castanya section-vcentered">
         <div class="box">
             <h1>Acknowledgement</h1>
-            <p>If you use <code>qdts</code>, please cite it as (click to copy to clipboard):</p>
-            <div style="margin-bottom: 1rem;" class="box bibtex-box" data-bibtex-src="../assets/projects/qdts/projects_nqdts_bibtex.txt"></div>
-            <div class="box bibtex-box" data-bibtex-src="../assets/projects/qdts/projects_qdts_bibtex.txt"></div>
+            <p>If you use <code>frft</code>, please cite it as (click to copy to clipboard):</p>
+            <div class="box bibtex-box" data-bibtex-src="../assets/projects/frft/rt_frft_bibtex.txt" style="margin-bottom: 1rem;"></div>
+            <div class="box bibtex-box" data-bibtex-src="../assets/projects/frft/frft_bibtex.txt"></div>
         </div>
     </div>
 

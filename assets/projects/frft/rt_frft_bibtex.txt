@@ -1,0 +1,6 @@
+@article{Gutierrez2026RTFRFT,
+  author  = {Guti\'{e}rz, Esteban and Haki, Behzad and Sing Long, Carlos and Font, Frederic and Serra, Xavier and C\'{a}diz, Rodrigo F.},
+  title   = {Real-Time Fractional {Fourier} Sound Synthesis and Processing},
+  journal = {Journal of the Audio Engineering Society},
+  year    = {2026},
+}
