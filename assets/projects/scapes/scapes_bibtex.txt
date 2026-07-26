@@ -1,0 +1,9 @@
+@inproceedings{gutierrez2025scapes,
+  title     = {SCAPES: Semantically Conditioned Autoregressive Prior for Environmental Sounds},
+  author    = {Gutiérrez, Esteban and Wyse, Lonce and Font, Frederic and Serra, Xavier},
+  booktitle = {Proceedings of the 29th International Conference on Digital Audio Effects (DAFx26)},
+  year      = {2025},
+  address   = {Cambridge, USA},
+  month     = {September},
+  note      = {1--5 September 2026}
+}

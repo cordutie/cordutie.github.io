@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban G. | StochRes</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" href="assets/img/others/favicon1.png">
+    <title>Esteban G. | Stochastic Resonance</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/yt-playlist.css">
+    <link rel="icon" type="image/png" href="../assets/img/others/favicon1.png">
 </head>
 
 <body style="background-color: var(--castanya);">
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <button class="dev-toggle" id="dev-toggle" type="button">Dev: off</button>
     <nav class="navbar">
         <a href="../index.html">Home</a>
@@ -20,18 +22,117 @@
     </nav>
     <div class="nav-divider"></div>
 
+    <!-- MAIN SECTION --------------------------------------------------------------->
     <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
-            <h1 style="text-align: center;">StochRes</h1>
-            <p style="text-align: center;">🚧 Under construction</p>
+            <h1 style="text-align: center;">Stochastic Resonance</h1>
+
+            <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                <a href="https://animupa.cl/wp-content/uploads/2024/07/SMC2024_paper_id50.pdf" target="_blank" class="button button-brick">(SMC24) Paper</a>
+                <a href="https://www.youtube.com/playlist?list=PLTk_Hl5v7kDXeXG7BO6wIWGkhd0m55JrT" target="_blank" class="button button-brick">(SMC24) Sound Examples</a>
+                <a href="https://github.com/cordutie/Stochastic-Resonance" target="_blank" class="button button-brick">Source Code</a>
+            </div>
+
+            <div class="box" style="max-width: 840px; padding: 1rem;">
+                <img src="../assets/projects/stochres/ableton_freq.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 840px); height: auto;" alt="stochres_main" />
+            </div>
+            <div class="box" style="max-width: 720px; padding: 1rem;">
+                <p style="text-align: center;">Stochastic Resonance is a phenomenon where the introduction of random noise enhances the detection of weak signals in nonlinear systems. This project applies it to sound synthesis and processing, providing real-time Max/MSP tools for creating novel timbres, recovering weak signals, and retrieving missing fundamentals.</p>
+            </div>
         </div>
     </div>
 
+    <!-- DESCRIPTION SECTION --------------------------------------------------------------------->
+    <div class="section section-lino section-vcentered">
+        <div class="box">
+
+            <h1>Overview</h1>
+            <p>Stochastic Resonance is not a single model but a technique for studying stochastic dynamical systems, first introduced by Benzi, Parisi, Sutera and Vulpiani (1981). Despite being observed in fields ranging from physics to sensory biology, its application to sound has remained largely unexplored. This project provides efficient, real-time implementations of several Stochastic Resonance algorithms as a package for Max/MSP.</p>
+
+            <h2>Algorithms</h2>
+            <p>Four algorithms are implemented, each suited to different applications:</p>
+
+            <h3>Time Domain</h3>
+            <p><strong>Threshold Stochastic Resonance (TSR)</strong> — The simplest form: noise is added to a signal and a constant threshold is applied. When the signal is weak enough to fall mostly below the threshold, the noise helps push it through, revealing structure that was otherwise hidden.</p>
+
+            <p><strong>Multi-unit TSR (MTSR)</strong> — Averages multiple TSR outputs to reduce noise, producing a cleaner representation of the expected result. Inspired by N-unit models from sensory biology.</p>
+
+            <div class="box" style="max-width: 600px; padding: 1rem;">
+                <img src="../assets/projects/stochres/ableton_time.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 600px); height: auto;" alt="ableton_time" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 1.</b> Max for Live MIDI synthesizer using <code>sr.timedom~</code>.</p>
+            </div>
+
+            <h3>Frequency Domain</h3>
+            <p><strong>Spectral TSR</strong> — Applies noise and a threshold function in the frequency domain. Noise is balanced according to an equal-loudness contour (C-weighting), and the threshold function is user-configurable, allowing frequency-dependent control over which spectral components survive.</p>
+
+            <p><strong>Spectral MTSR</strong> — Averages multiple Spectral TSR outputs for smoother results.</p>
+
+            <div class="box" style="max-width: 600px; padding: 1rem;">
+                <img src="../assets/projects/stochres/ableton_freq.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 600px); height: auto;" alt="ableton_freq" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 2.</b> Max for Live device using <code>sr.freqdom~</code> as a sound effect.</p>
+            </div>
+
+            <h2>Applications</h2>
+            <p><strong>Sound Synthesis</strong> — When a simple signal (sine, saw, noise) is fed through the objects, the result is a novel form of synthesis. The input waveform type becomes an additional parameter alongside all algorithm parameters, yielding a vast array of sound types.</p>
+
+            <p><strong>Recovering Weak Signals</strong> — Noise combined with a detection function can reveal signals that are otherwise undetectable, improving the signal-to-noise ratio under certain circumstances.</p>
+
+            <p><strong>Missing Fundamental / Ghost Stochastic Resonance</strong> — For a harmonic complex with an absent fundamental, applying Stochastic Resonance can cause the missing pitch to suddenly emerge—a phenomenon with immense creative potential.</p>
+
+            <div class="box yt-playlist-box" style="max-width: 720px; width: 100%;">
+                <div data-playlist-id="PLTk_Hl5v7kDXeXG7BO6wIWGkhd0m55JrT"></div>
+            </div>
+
+            <h2>References</h2>
+            <ul>
+                <li>Gutiérrez, E. & Cádiz, R. (2024). <em>Stochastic Resonance: Molding Sounds from Noise.</em> In <em>Proceedings of the 21st Sound and Music Computing Conference (SMC 2024)</em>, Santiago, Chile.</li>
+                <li>Benzi, R., Sutera, A., & Vulpiani, A. (1981). <em>The mechanism of stochastic resonance.</em> Journal of Physics A: Mathematical and General, 14(11), L453.</li>
+                <li>Gammaitoni, L., Hänggi, P., Jung, P., & Marchesoni, F. (1998). <em>Stochastic resonance.</em> Reviews of Modern Physics, 70(1), 223–287.</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- MAX PACKAGE --------------------------------------------------->
+    <div class="section section-pale section-vcentered">
+        <div class="box">
+            <h1>Max Package</h1>
+            <p>The <code>Stochastic Resonance</code> package for Max/MSP implements all four algorithms as real-time externals using the <a href="https://github.com/Cycling74/min-devkit" target="_blank">Min dev-kit</a>. It includes <code>sr.timedom~</code> (time-domain) and <code>sr.freqdom~</code> (frequency-domain) objects, along with helper utilities and GUI subpatchers. The package is currently no longer maintained, but the source code and builds remain available on GitHub.</p>
+            <div style="text-align: center; margin: 1rem;">
+                <a href="https://github.com/cordutie/Stochastic-Resonance" target="_blank"><img src="https://img.shields.io/badge/Source%20Code-grey?logo=github&logoColor=white&style=for-the-badge" alt="Source Code" style="height: 36px;"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Acknowledgements --------------------------------------------------->
+    <div class="section section-castanya section-vcentered">
+        <div class="box">
+            <h1>Acknowledgement</h1>
+            <p>If you use this work, please cite it as (click to copy to clipboard):</p>
+            <div class="box bibtex-box" data-bibtex-src="../assets/projects/stochres/stochres_bibtex.txt"></div>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem;">
+                <a href="https://github.com/cordutie/Stochastic-Resonance" target="_blank"><img src="https://img.shields.io/badge/Source%20Code-grey?logo=github&logoColor=white&style=for-the-badge" alt="Source Code" style="height: 36px;"></a>
+            </div>
+
+            <div class="nav-divider" style="background-color: rgba(255,255,255,0.3); margin-top: 2rem; margin-bottom: 1.5rem;"></div>
+
+            <h2>Contact</h2>
+            <p>For questions or details, feel free to reach out at <a href="mailto:esteban.gutierezc@upf.edu">esteban.gutierezc@upf.edu</a>.</p>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <div class="nav-divider"></div>
     <nav class="navbar">
-        <a href="../index.html">Home</a>
+        <a href="./index.html">Home</a>
     </nav>
-    <script src="assets/js/dev-toggle.js"></script>
+
+    <!-- SCRIPTS -------------------------------------------------------->
+    <script>window.YT_API_KEY = 'AIzaSyDZf4pAT-1c5pDIoUvUFnFMoor3dAGW9zk';</script>
+    <script src="../assets/js/dev-toggle.js"></script>
+    <script src="../assets/js/bibtex-loader.js"></script>
+    <script src="../assets/js/yt-playlist.js"></script>
 </body>
 
 </html>

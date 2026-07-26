@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esteban G. | SCAPES</title>
+    <title>Esteban G. | scapes</title>
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="icon" type="image/png" href="../assets/img/others/favicon1.png">
 </head>
 
 <body style="background-color: var(--castanya);">
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <button class="dev-toggle" id="dev-toggle" type="button">Dev: off</button>
     <nav class="navbar">
         <a href="../index.html">Home</a>
@@ -20,18 +21,163 @@
     </nav>
     <div class="nav-divider"></div>
 
+    <!-- MAIN SECTION ----------------------------------------------------------------------->
     <div class="section section-castanya section-fullscreen section-vcentered">
         <div class="box">
             <h1 style="text-align: center;">SCAPES</h1>
-            <p style="text-align: center;">🚧 Under construction</p>
+
+            <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
+                <a href="#" target="_blank" class="button button-brick">(DAFx26) Paper</a>
+                <a href="#" target="_blank" class="button button-brick">(DAFx26) Sound Examples</a>
+                <a href="https://huggingface.co/spaces/cordutie/SCAPES-demo" target="_blank" class="button button-brick">Demo</a>
+                <a href="#tutorial" class="button button-brick">Tutorial</a>
+                <a href="https://github.com/cordutie/SCAPES" target="_blank" class="button button-brick">Source Code</a>
+                <a href="https://huggingface.co/cordutie/SCAPES-models" target="_blank" class="button button-brick">Weights</a>
+            </div>
+
+            <div class="box" style="max-width: 840px; padding: 1rem;">
+                <img src="/assets/projects/scapes/scapes_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 840px); height: auto;" alt="scapes_main" />
+            </div>
+            <div class="box" style="max-width: 720px; padding: 1rem;">
+            <p style="text-align: center;">SCAPES is a lightweight generative model for high-fidelity environmental texture synthesis with semantic control. By operating on the continuous latent manifold of a neural audio codec and conditioning on CLAP embeddings, it enables intuitive generation, resynthesis, and smooth interpolation between sound classes—all trainable on a single consumer GPU in Colab.</p>
+            </div>
         </div>
     </div>
 
+    <!-- FEATURED ----------------------------------------------------------->
+    <div class="section section-brick section-vcentered">
+        <div class="box">
+            <h1>Featured</h1>
+            <p>SCAPES was originally developed as a controllable, semantically guided environmental sound synthesizer. Its architecture enables dense, time-varying semantic control, but this control remains intentionally coarse, as it is limited to high-level semantic descriptors rather than detailed acoustic representations. Additionally, its relatively small memory buffer constrains its ability to generate sounds with complex mid- or long-term temporal structure.</p>
+            <p>With these constraints in mind, the artist duo <a href="https://www.instagram.com/dotzerosix/" target="_blank" rel="noopener noreferrer">dotzerosix</a> explored SCAPES as part of the <a href="https://www.upf.edu/web/mtg/generative-music-ai-workshop" target="_blank" rel="noopener noreferrer">5th Generative Music AI Workshop</a>. They hand-curated a custom dataset and trained SCAPES to create a synthesizer conditioned on the semantic and timbral characteristics of their own sonic material. The resulting model was used to generate all of the backing tracks for the live performance shown below.</p>
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 720px; margin: 2rem auto 2rem;">
+                <iframe
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    title="SCAPES presentation"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p>To complement SCAPES, each performer also trained a personalized <a href="https://github.com/blazejkotowski/plaud" target="_blank" rel="noopener noreferrer">PLAUD</a> model on their own songs. During the performance, these models were played live in real time alongside the SCAPES-generated accompaniment, creating an entirely AI-driven audiovisual set based on the artists' own musical identities.</p>
+        </div>
+    </div>
+
+    <!-- DESCRIPTION SECTION --------------------------------------------------------------------->
+    <div class="section section-lino section-vcentered">
+        <div class="box">
+
+            <h1>What is SCAPES?</h1>
+            <p>As generative audio models grow in complexity, the computational and ecological costs of synthesizing everyday sounds have become increasingly prohibitive, often requiring industrial-scale resources and massive datasets. <strong>SCAPES</strong> (Semantically Conditioned Autoregressive Prior for Environmental Sounds) addresses this by providing a lightweight, resource-efficient alternative for high-fidelity environmental texture synthesis.</p>
+            <p>The model segments audio into overlapping <em>atoms</em> (0.22 s segments at 10 Hz control rate), each annotated with a CLAP semantic embedding. A Transformer-based Continuous Normalizing Flow, trained via Flow Matching, learns to predict each atom from its preceding context and conditioning label. At just 36 million parameters, SCAPES can be trained on a single consumer GPU in a duration similar to double the length of the source audio itself.</p>
+
+            <ul style="margin-bottom: 1.5rem; padding-left: 1.25rem;">
+                <li><b>Semantic control</b> with CLAP-based conditioning (no manual labels)</li>
+                <li><b>Continuous latent generation</b> (no token quantization bottleneck)</li>
+                <li><b>Efficient training</b> on consumer GPUs (~1 hour on a single RTX 4090 for the smallest model on 30 minutes of data)</li>
+                <li><b>Long-term texture stability</b> in autoregressive generation</li>
+                <li><b>Smooth semantic interpolation</b> between environmental classes</li>
+            </ul>
+
+            <div class="box" style="max-width: 540px; padding: 1rem;">
+                <img src="/assets/projects/scapes/architecture.svg" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 540px); height: auto;" alt="scapes_architecture" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 1.</b> Inference architecture. The Transformer-based vector field is conditioned on past atomic memory via cross-attention and semantic context via AdaLN. An ODE solver integrates the field from noise to target atom.</p>
+            </div>
+
+            <!-- <h2>References</h2>
+            <ul>
+                <li>Gutiérrez, E., Wyse, L., Font, F., & Serra, X. (2026). <em>SCAPES: Semantically Conditioned Autoregressive Prior for Environmental Sounds.</em> In <em>Proceedings of the 29th International Conference on Digital Audio Effects (DAFx 2026)</em>, Cambridge, USA.</li>
+            </ul> -->
+
+        </div>
+    </div>
+
+    <!-- DOWNLOAD / DEMO --------------------------------------------------->
+    <div class="section section-pale section-vcentered">
+        <div class="box" id="tutorial">
+            <h1>Try SCAPES</h1>
+
+            <p>Generate environmental sounds with semantic control and explore smooth interpolations between sound classes directly in your browser using the SCAPES demo.</p>
+            <div class="box" style="max-width: 600px; padding: 1rem;">
+                <img src="/assets/projects/scapes/scapes_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="scapes_demo" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 2.</b> Interactive demo showcasing the capabilities of SCAPES.</p>
+            </div>
+
+            <p>Two models are available: the one used to evaluate the paper, and a second model trained on curated sounds by the artist duo <a href="https://www.instagram.com/dotzerosix/" target="_blank">dotzerosix</a>, composed by musicians <a href="https://www.instagram.com/taniacortesbecerra/" target="_blank">Tania Cortés</a> and <a href="https://www.instagram.com/ffnnttcchh/" target="_blank">Oscar Bahamonde</a>.</p>
+            <div style="text-align: center; margin: 1rem 0;">
+                <a href="https://huggingface.co/spaces/cordutie/SCAPES-demo" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace%20Spaces-yellow?style=for-the-badge" alt="HuggingFace Spaces" style="height: 36px;"></a>
+            </div>
+
+            <div class="nav-divider" style="background-color: black; margin-top: 3rem; margin-bottom: 2rem;"></div>
+
+            <h1>Quick Start</h1>
+            <p>SCAPES is fully customizable. You can train your own model and run it in the browser without needing your own hardware. Follow the two steps below to get started.</p>
+
+            <h2>Step 1: Train SCAPES</h2>
+            <p>Choose one of the two available Colab tutorials:</p>
+
+            <div style="display: flex; gap: 1rem; margin: 1rem 0; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 220px; padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.06);">
+                    <h4 style="margin-top: 0;">Simplified Tutorial</h4>
+                    <div style="margin: 0.5rem 0;">
+                        <a href="https://colab.research.google.com/github/cordutie/SCAPES/blob/main/quickstart/tutorial_simplified.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Simplified Tutorial" style="height: 36px;"></a>
+                    </div>
+                    <p style="margin: 0; font-size: 0.95rem;">Train with default parameters and generate sounds quickly.</p>
+                </div>
+                <div style="flex: 1; min-width: 220px; padding: 1rem; border-radius: 12px; background: rgba(0,0,0,0.06);">
+                    <h4 style="margin-top: 0;">Full Tutorial</h4>
+                    <div style="margin: 0.5rem 0;">
+                        <a href="https://colab.research.google.com/github/cordutie/SCAPES/blob/main/quickstart/tutorial_full.ipynb" target="_blank"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Full Tutorial" style="height: 36px;"></a>
+                    </div>
+                    <p style="margin: 0; font-size: 0.95rem;">Dive into the full pipeline: data preparation, custom training, and evaluation.</p>
+                </div>
+            </div>
+
+            <h2>Step 2: Run SCAPES</h2>
+            <p>Once trained, you can run SCAPES either in the browser or locally on your own machine.</p>
+
+            <h3>🌐 Running SCAPES in the Browser</h3>
+            <p>Import your trained model into the demo by pressing the "+" symbol and following the instructions.</p>
+            
+            <div class="box" style="max-width: 600px; padding: 1rem;">
+                <img src="/assets/projects/scapes/scapes_add_model.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="scapes_demo" />
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 3.</b> Model import interface.</p>
+            </div>
+
+            <h3>💻 Running SCAPES Locally</h3>
+            <p>SCAPES is based on a Transformer encoder that benefits greatly from GPU acceleration. If you have a reasonably powerful consumer GPU, you can run SCAPES locally. For instructions, refer to the README in the source code repository.</p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem;">
+                <a href="https://github.com/cordutie/SCAPES" target="_blank"><img src="https://img.shields.io/badge/Source%20Code-grey?logo=github&logoColor=white&style=for-the-badge" alt="Source Code" style="height: 36px;"></a>
+                <a href="https://huggingface.co/spaces/cordutie/SCAPES-demo/tree/main" target="_blank"><img src="https://img.shields.io/badge/Demo%20Source-grey?logo=huggingface&logoColor=white&style=for-the-badge" alt="Demo Source" style="height: 36px;"></a>
+                <a href="https://huggingface.co/cordutie/SCAPES-models" target="_blank"><img src="https://img.shields.io/badge/Pretrained%20Models-yellow?logo=huggingface&logoColor=white&style=for-the-badge" alt="Pretrained Models" style="height: 36px;"></a>
+            </div>
+
+            <h2>Contact</h2>
+
+            <p>If you have any questions, feel free to reach out at <a href="mailto:esteban.gutierezc@upf.edu">esteban.gutierezc@upf.edu</a>.</p>
+        </div>
+    </div>
+
+    <!-- Acknowledgements --------------------------------------------------->
+    <div class="section section-castanya section-vcentered">
+        <div class="box">
+            <h1>Acknowledgement</h1>
+            <p>If you use SCAPES, please cite it as (click to copy to clipboard):</p>
+            <div class="box bibtex-box" data-bibtex-src="../assets/projects/scapes/scapes_bibtex.txt"></div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION BAR -------------------------------------------------------->
     <div class="nav-divider"></div>
     <nav class="navbar">
-        <a href="../index.html">Home</a>
+        <a href="./index.html">Home</a>
     </nav>
+
+    <!-- SCRIPTS -------------------------------------------------------->
     <script src="../assets/js/dev-toggle.js"></script>
+    <script src="../assets/js/bibtex-loader.js"></script>
 </body>
 
 </html>

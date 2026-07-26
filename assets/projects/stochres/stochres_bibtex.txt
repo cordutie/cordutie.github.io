@@ -1,0 +1,7 @@
+@inproceedings{gutierrez2024stochastic,
+  title     = {Stochastic Resonance: Molding Sounds from Noise},
+  author    = {Gutiérrez, Esteban and Cádiz, Rodrigo},
+  booktitle = {Proceedings of the 21st Sound and Music Computing Conference (SMC 2024)},
+  year      = {2024},
+  address   = {Santiago, Chile}
+}

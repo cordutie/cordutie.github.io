@@ -1,0 +1,9 @@
+@inproceedings{gutierrez2025statistics,
+  title     = {A Statistics-Driven Differentiable Approach for Sound Texture Synthesis and Analysis},
+  author    = {Gutiérrez, Esteban and Font, Frederic and Serra, Xavier and Wyse, Lonce},
+  booktitle = {Proceedings of the 28th International Conference on Digital Audio Effects (DAFx25)},
+  year      = {2025},
+  address   = {Ancona, Italy},
+  month     = {September},
+  note      = {2--5 September 2025}
+}
