@@ -1,0 +1,42 @@
+[
+    {
+        "title": "SCAPES",
+        "slug": "scapes",
+        "description": "Controllable environmental sounds generation via semantic embeddings.",
+        "image": "assets/projects/scapes/scapes_icon.png",
+        "home": true,
+        "order": 1
+    },
+    {
+        "title": "FRFT",
+        "slug": "frft",
+        "description": "Synthesis and Processing using the Fractional Fourier Transform.",
+        "image": "assets/projects/frft/frft_icon.png",
+        "home": true,
+        "order": 2
+    },
+    {
+        "title": "DDSP Textures",
+        "slug": "ddsp_textures",
+        "description": "Textures synthesis using perceptually informed DDSP architecture.",
+        "image": "assets/projects/ddsp_textures/ddsp_icon.png",
+        "home": false,
+        "order": 3
+    },
+    {
+        "title": "QDTS",
+        "slug": "qdts",
+        "description": "Synthesizing absent sounds.",
+        "image": "assets/projects/qdts/qdts_icon.png",
+        "home": true,
+        "order": 4
+    },
+    {
+        "title": "Stochastic Resonances",
+        "slug": "stochres",
+        "description": "Musical applications of stochastic resonance phenomena.",
+        "image": "assets/projects/stochres/sr_icon.png",
+        "home": false,
+        "order": 5
+    }
+]
