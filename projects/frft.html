@@ -30,7 +30,7 @@
 
             <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
                 <a href="#" target="_blank" class="button button-brick">(JAES26) Paper</a>
-                <a href="#" target="_blank" class="button button-brick">(ICMC25) Paper</a>
+                <a href="https://arxiv.org/abs/2506.09189" target="_blank" class="button button-brick">(ICMC25) Paper</a>
                 <a href="https://www.youtube.com/playlist?list=PLUIndkF5J244" target="_blank" class="button button-brick">(JAES26) Examples</a>
                 <a href="https://www.youtube.com/playlist?list=PLTk_Hl5v7kDUKD-d_sTh_dI-0tY0hVJX5" target="_blank" class="button button-brick">(ICMC25) Examples</a>
                 <a href="#frft_max" class="button button-brick">Max</a>
@@ -51,7 +51,7 @@
     <div class="section section-brick section-vcentered">
         <div class="box">
             <h1>Background and Tutorials</h1>
-            <p>Although this webpage includes basic intuitions for the Fractional Fourier Transform, for more accurate mathematical definitions and properties we recommend reading our papers <a href="#" target="_blank">"Fractional Fourier Sound Synthesis"</a> (ICMC 2025) and <a href="#" target="_blank">"Real-Time Fractional Fourier Sound Synthesis and Processing"</a> (JAES 2026). Supplementary material with sound examples, spectrograms, and detailed descriptions for each paper is available at <a href="https://cordutie.github.io/frft_sound_synthesis/" target="_blank">cordutie.github.io/frft_sound_synthesis</a> and <a href="https://cordutie.github.io/rt_frft/" target="_blank">cordutie.github.io/rt_frft</a> respectively.</p>
+            <p>Although this webpage includes basic intuitions for the Fractional Fourier Transform, for more accurate mathematical definitions and properties we recommend reading our papers <a href="https://arxiv.org/abs/2506.09189" target="_blank">"Fractional Fourier Sound Synthesis"</a> (ICMC 2025) and <em>"Real-Time Fractional Fourier Sound Synthesis and Processing"</em> (JAES 2026, in press). Supplementary material with sound examples, spectrograms, and detailed descriptions for each paper is available at <a href="https://cordutie.github.io/frft_sound_synthesis/" target="_blank">cordutie.github.io/frft_sound_synthesis</a> and <a href="https://cordutie.github.io/rt_frft/" target="_blank">cordutie.github.io/rt_frft</a> respectively.</p>
 
             <p>For a comprehensive and interactive introduction to the Fractional Fourier Transform applied to sound, including web demos and implementation details in Max, we refer to the following tutorial by <a href="https://behzadhaki.com/" target="_blank">Behzad Haki</a>:</p>
             <a href="https://behzadhaki.com/works/max/frft/" target="_blank" style="text-decoration: none; color: inherit;">
@@ -76,7 +76,7 @@
             <p>A key challenge for sonic applications is that signals in the $\alpha$-domain are generally complex-valued. To address this, we introduce the <strong>Real Fractional Fourier Transform (RFRFT)</strong>, which extracts the real part of the FRFT. The RFRFT preserves linearity and introduces a <em>double rotation</em> property: for real signals, taking the real part reduces the intensity of the original rotation while adding an equally significant rotation in the opposite direction. This double rotation is the source of many of the distinctive sonic behaviors observed throughout our work.</p>
             
             <div class="box" style="max-width: 720px; padding: 1rem;">
-                <img src="/assets/projects/frft/frft_vs_rfrt.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 720px); height: auto;" alt="frft_model" />
+                <img src="/assets/projects/frft/frft_vs_rfrt.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 720px); height: auto;" alt="frft_vs_rfrft" />
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 600px; margin-left: auto; margin-right: auto;"><b>Figure 1.</b> From left to right, spectrograms of a sinusoid at 11,025 Hz, its FRFT, and its RFRFT, both of order $\alpha = 0.25$. Frequency axis is measured in kHz while time axis in seconds. While the FRFT rotates the signal in the time–frequency plane, the RFRFT introduces a second rotation in the opposite direction.</p>
             </div>
 
@@ -84,7 +84,7 @@
             <p>By interpreting the FRFT as a rotation in the time–frequency plane, we introduce several techniques for real-time sound synthesis and processing in the α-domain. Each method exploits different aspects of the FRFT's geometric and algebraic properties to produce sonic behaviors that are fundamentally different from their conventional Fourier-based counterparts.</p>
 
             <div class="box" style="max-width: 720px; padding: 1rem;">
-                <img src="/assets/projects/frft/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 720px); height: auto;" alt="frft_vs_rfrft" />
+                <img src="/assets/projects/frft/frft_main.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 720px); height: auto;" alt="frft_main" />
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem;"><b>Figure 2. <code>frft</code> package.</b> Max patcher using the <code>frft~</code> external for real-time FRFT-based sound synthesis and processing.</p>
             </div>
 
@@ -99,8 +99,8 @@
 
             <h2>References</h2>
             <ul>
-                <li>Gutiérrez, E., Haki, B., Sing Long, C., Font, F., Serra, X., & Cádiz, R. F. (2026). <em>Real-time fractional Fourier sound synthesis and processing.</em> <em>Journal of the Audio Engineering Society</em>.</li>
-                <li>Gutiérrez, E., Cádiz, R. F., Sing Long, C. A., Font, F., & Serra, X. (2025). <em>Fractional Fourier Transform sound synthesis.</em> In <em>Proceedings of the International Computer Music Conference</em>, Boston, USA.</li>
+                <li>Gutiérrez, E., Haki, B., Sing-Long, C., Font, F., Serra, X., & Cádiz, R. F. (2026). <em>Real-time fractional Fourier sound synthesis and processing.</em> <em>Journal of the Audio Engineering Society</em>.</li>
+                <li>Gutiérrez, E., Cádiz, R. F., Sing-Long, C. A., Font, F., & Serra, X. (2025). <em>Fractional Fourier sound synthesis.</em> In <em>Proceedings of the International Computer Music Conference</em> (pp. 420–425), Boston, USA.</li>
             </ul>
 
         </div>

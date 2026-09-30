@@ -71,7 +71,7 @@
             <p><code>TexDSP</code> is a DDSP-inspired architecture that uses <code>TexEnv</code> as its synthesizer and <code>TexStat</code> as its sole loss function. A simple encoder network maps audio features to the parameters of <code>TexEnv</code>, enabling the generation of indefinitely long sequences of controllable texture sounds. Trained models stay under 25 MB, making them suitable for real-time applications.</p>
 
             <div class="box" style="max-width: 960px; padding: 1rem;">
-                <img src="../assets/projects/ddsp_textures/architecture.svg" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="texenv_diagram" />
+                <img src="../assets/projects/ddsp_textures/architecture.svg" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="texdsp_architecture" />
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 3.</b> <code>TexDSP</code> generative model architecture.</p>
             </div>
 
@@ -93,7 +93,7 @@
     <div class="section section-pale section-vcentered">
         <div class="box">
             <h1>Try <code>TexStat</code></h1> 
-            <p><code>TexStat</code> is fully usable both as a loss function and an evaluation tool, where, combined with either FAD or KAD, can be used to determine similarity between the summary statistics of different audio files. For an example of this see <a href="#" target="_blank">"SCAPES: Semantically Conditioned Autoregressive Prior for Environmental Sounds"</a>.</p>
+            <p><code>TexStat</code> is fully usable both as a loss function and an evaluation tool, where, combined with either FAD or KAD, can be used to determine similarity between the summary statistics of different audio files. For an example of this see <a href="https://arxiv.org/abs/2609.04634" target="_blank">"SCAPES: Semantically Conditioned Autoregressive Prior for Environmental Sounds"</a>.</p>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; margin-top: 1.5rem;">
                 <a href="https://github.com/cordutie/texstat" target="_blank"><img src="https://img.shields.io/badge/TexStat-grey?logo=github&logoColor=white&style=for-the-badge" alt="TexStat" style="height: 36px;"></a>
             </div>
@@ -101,7 +101,7 @@
             <h1><code>TexDSP</code> on Max</h1>
             <p>A Max/MSP implementation of the <code>TexDSP</code> generative model was developed by <a href="https://github.com/behzadhaki" target="_blank">Behzad Haki</a> with the purpose of having a demo for the poster session in the conference this model was presented.</p>
             <div class="box" style="max-width: 960px; padding: 1rem;">
-                <img src="../assets/projects/ddsp_textures/ddsp_screenshot.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="texenv_diagram" />
+                <img src="../assets/projects/ddsp_textures/ddsp_screenshot.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="texdsp_max" />
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 4.</b> <code>TexDSP</code> generative model running on Max.</p>
             </div>
 

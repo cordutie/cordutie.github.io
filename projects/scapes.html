@@ -27,7 +27,7 @@
             <h1 style="text-align: center;">SCAPES</h1>
 
             <div class="box" style="max-width: 720px; padding: 1rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem;">
-                <a href="#" target="_blank" class="button button-brick">(DAFx26) Paper</a>
+                <a href="https://arxiv.org/abs/2609.04634" target="_blank" class="button button-brick">(DAFx26) Paper</a>
                 <a href="https://cordutie.github.io/SCAPES-DAFx26/" target="_blank" class="button button-brick">(DAFx26) Sound Examples</a>
                 <a href="https://huggingface.co/spaces/cordutie/SCAPES-demo" target="_blank" class="button button-brick">Demo</a>
                 <a href="#tutorial" class="button button-brick">Tutorial</a>
@@ -52,13 +52,22 @@
             <p>With these constraints in mind, the artist duo <a href="https://www.instagram.com/dotzerosix/" target="_blank" rel="noopener noreferrer">dotzerosix</a> explored SCAPES as part of the <a href="https://www.upf.edu/web/mtg/generative-music-ai-workshop" target="_blank" rel="noopener noreferrer">5th Generative Music AI Workshop</a>. They hand-curated a custom dataset and trained SCAPES to create a synthesizer conditioned on the semantic and timbral characteristics of their own sonic material. The resulting model was used to generate all of the backing tracks for the live performance shown below.</p>
             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 720px; margin: 2rem auto 2rem;">
                 <iframe
+                    id="scapes-video"
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-                    src="https://www.youtube.com/embed/P_Pfo5UhcpI"
+                    src="about:blank"
                     title="SCAPES presentation"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowfullscreen>
                 </iframe>
+                <div
+                    id="scapes-video-poster"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Play video"
+                    title="Play video"
+                    style="position: absolute; inset: 0; width: 100%; height: 100%; cursor: pointer; border: 0; background: center / cover no-repeat; background-image: url('https://i.ytimg.com/vi/P_Pfo5UhcpI/maxresdefault.jpg');">
+                </div>
             </div>
             <p>To complement SCAPES, each performer also trained a personalized <a href="https://github.com/blazejkotowski/plaud" target="_blank" rel="noopener noreferrer">PLAUD</a> model on their own songs. During the performance, these models were played live in real time alongside the SCAPES-generated accompaniment, creating an entirely AI-driven audiovisual set based on the artists' own musical identities.</p>
         </div>
@@ -141,7 +150,7 @@
             <p>Import your trained model into the demo by pressing the "+" symbol and following the instructions.</p>
             
             <div class="box" style="max-width: 600px; padding: 1rem;">
-                <img src="/assets/projects/scapes/scapes_add_model.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="scapes_demo" />
+                <img src="/assets/projects/scapes/scapes_add_model.png" style="display: block; margin: 0 auto; width: clamp(200px, 100%, 960px); height: auto;" alt="scapes_add_model" />
                 <p style="text-align: center; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; max-width: 480px; margin-left: auto; margin-right: auto;"><b>Figure 3.</b> Model import interface.</p>
             </div>
 
@@ -178,6 +187,21 @@
     <!-- SCRIPTS -------------------------------------------------------->
     <script src="../assets/js/dev-toggle.js"></script>
     <script src="../assets/js/bibtex-loader.js"></script>
+    <script>
+        (function () {
+            var poster = document.getElementById('scapes-video-poster');
+            var frame = document.getElementById('scapes-video');
+            if (!poster || !frame) return;
+            function play() {
+                frame.src = 'https://www.youtube.com/embed/P_Pfo5UhcpI?autoplay=1&rel=0';
+                poster.remove();
+            }
+            poster.addEventListener('click', play);
+            poster.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); play(); }
+            });
+        })();
+    </script>
 </body>
 
 </html>
